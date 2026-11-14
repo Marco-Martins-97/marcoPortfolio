@@ -55,7 +55,7 @@
   - **Secondary Text:** Light Gray (`#94A3B8` / `#CBD5E1`)
   - **Primary CTA Accent (Freelance / Conversion):** Amber (`#F59E0B`) with dark text (`#0A0A0C`) for `~9.8:1` contrast
   - **Secondary Accent (Engineering / Navigation / Links):** Cobalt (`#3B82F6` borders/badges, `#60A5FA` text links on dark surfaces)
-  - **Status Badges:** Emerald (`#34D399` on `rgba(16, 185, 129, 0.14)`) for `Live`; Amber (`#FBBF24` on `rgba(245, 158, 11, 0.14)`) for `Building`
+  - **Status Badges:** Emerald (`#34D399` on `rgba(16, 185, 129, 0.14)`) for `Live`; Amber (`#FBBF24` on `rgba(245, 158, 11, 0.14)`) for `Building`; Cobalt Light (`#60A5FA` on `rgba(59, 130, 246, 0.14)`) for `Planning`
 - **UI Language / i18n:** Bilingual **`pt-PT` & `EN`** via lightweight React Context + schema-mirrored `{ en, pt }` content objects (no heavy i18n framework overhead).
 
 ### Site Map & Route Architecture
@@ -63,19 +63,19 @@
 | :--- | :--- | :--- |
 | `/` | **Homepage** | Simple, clean landing page with **2–3 strategic CTAs** for small-business freelance leads, primary project highlights, and recruiter entry point. |
 | `/projects` | **Projects Index** | Two-tier showcase: **Primary Projects** (*Root Studio Fitness*, *Marco Portfolio & Web Studio*, *HomeLab*, *Obelisk*) linking to detail pages; **Secondary Projects** (6 curated backend APIs, frontend apps, PHP plugin & systems) linking directly to GitHub/Demo. |
-| `/projects/:slug` | **Project Details** | Dedicated deep-dive page for Primary Projects with full overview, build status (`live` \| `building`), tech stack, architectural/business highlights, and placeholder screenshot gallery. |
+| `/projects/:slug` | **Project Details** | Dedicated deep-dive page for Primary Projects with full overview, build status (`live` \| `building` \| `planning`), tech stack, architectural/business highlights, and placeholder screenshot gallery. |
 | `/about` | **About** | Concise developer bio, experience, education, AI-augmented engineering workflow, hardware/maker interests, and direct contact/resume options. |
 
 ---
 
 ## 4. Functional Scope & Real Content Inventory
 ### Stage 1 — Static Frontend, API-Ready (Current Milestone)
-- [ ] **Bilingual (`pt-PT` / `EN`) Toggle:** Instant language switch synced across navigation, UI copy, and project content.
+- [x] **Bilingual (`pt-PT` / `EN`) Toggle:** Instant language switch synced across navigation, UI copy, and project content.
 - [ ] **`/` Homepage:** Clean hero, freelance small-business value proposition, **2–3 clear CTAs**, and featured Primary Projects preview.
-- [ ] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with `Live`/`Building` badges) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
+- [ ] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with `Live`/`Building`/`Planning` badges) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
 - [ ] **`/projects/:slug` Project Details:** Full case study/detail view with placeholder screenshot gallery, stack badges, status badge, and Live/GitHub links.
 - [ ] **`/about` Page:** Public-safe profile, experience, education, tech stack, and direct contact links.
-- [ ] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
+- [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
 - [ ] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback; full Express `/api/v1/inquiries` form deferred to Stage 2.
 
 ### Stage 2 — MERN Backend Integration (Next Milestone)
@@ -93,16 +93,18 @@
 
 ### Real Content Inventory (Sanitized GitHub & CV Catalog)
 #### Primary Projects (`/projects/:slug` Deep-Dives)
-1. **Root Studio Fitness** (`Live` — `https://www.rootstudiofitness.com`)
-   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `PWA`, `Node.js`, `Express`, `MongoDB`
-   - *Scope:* Production website built from the ground up for a real fitness studio.
+1. **Root Studio Fitness** (`Live` — `https://www.rootstudiofitness.com`, private repo)
+   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `PWA`, `Node.js`, `Express`, `MongoDB`, `Cloudinary`
+   - *Scope:* Production SEO/AIEO website + v1.0.0 full-stack PWA with 4 RBAC roles (`member`, `staff`, `admin`, `super_admin`), live workout player, +650 exercise library, internal mailbox/tickets, stateful `SHA-256` `HttpOnly` cookie sessions with device-fingerprint binding, Raspberry Pi keepalive, and 226 automated tests.
 2. **Marco Portfolio & Web Studio** (`Live` — `https://github.com/Marco-Martins-97/marcoPortfolio`)
-   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `Node.js`, `Express`, `MongoDB`
+   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `React Router`, `Vitest`
    - *Scope:* Bilingual dark-mode engineering portfolio and freelance web studio with two-stage API-ready architecture.
-3. **HomeLab** (`Building` — lineage: `HomeServer` [original project] -> `SmartHome` [abandoned successor, `github.com/Marco-Martins-97/smarthome`] -> `HomeLab` [next-generation self-hosted system])
-   - *Stack & Scope:* Next-generation self-hosted infrastructure/home-lab project; full details & architecture copy provided by Marco when building the projects piece.
-4. **Obelisk** (`Building`)
-   - *Scope:* Active build (summary, stack & details provided by Marco when building the projects piece).
+3. **HomeLab** (`Planning`)
+   - *Stack:* `Raspberry Pi`, `DietPi`, `Linux`, `Nginx`, `Node.js`, `Pi-hole`, `ESP32`
+   - *Scope:* Low-cost self-hosted daily server on Raspberry Pi Zero 2 W (8 GB OS + 32 GB external storage) running Pi-hole, FileBrowser, Node/Nginx web server, and planned ESP32 environmental/RF sensors.
+4. **Obelisk** (`Planning`)
+   - *Stack:* `JavaScript`, `HTML5 Canvas`, `Node.js`, `Express`
+   - *Scope:* Fantasy browser strategy game inspired by Tribal Wars & TerraFirmaCraft—focused on exploration, commerce, seasons, climate/elevation biomes, lost ruins technologies, and Obelisk magic.
 
 #### Secondary Projects (`/projects` Compact Showcase — 6 Curated Works)
 - **Backend & REST APIs:**
@@ -132,7 +134,7 @@
 - `title`: String (Required, max 100 chars)
 - `tier`: Enum (`primary` | `secondary`, Indexed, Required)
 - `category`: Enum (`engineering` | `business-template`, Indexed, Required)
-- `projectStatus`: Enum (`live` | `building`, Default: `live`, Indexed)
+- `projectStatus`: Enum (`live` | `building` | `planning`, Default: `live`, Indexed)
 - `summary`: `{ en: String, pt: String }` (Required, max 240 chars per locale)
 - `description`: `{ en: String, pt: String }` (Required for `primary` tier)
 - `highlights`: `[{ en: String, pt: String }]` (Optional key architectural or client outcomes)
