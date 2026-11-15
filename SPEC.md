@@ -74,7 +74,7 @@
 - [x] **`/` Homepage:** Clean hero, plain-language small-business value proposition, **2–3 clear CTAs** (email + copy-email fallback + `/projects` & `/about` redirects).
 - [ ] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with `Live`/`Building`/`Planning` badges) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
 - [ ] **`/projects/:slug` Project Details:** Full case study/detail view with placeholder screenshot gallery, stack badges, status badge, and Live/GitHub links.
-- [ ] **`/about` Page:** Public-safe profile, experience, education, tech stack, and direct contact links.
+- [x] **`/about` Page:** Public-safe profile, portrait image, experience, education, tech stack, and direct contact links.
 - [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
 - [ ] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback; full Express `/api/v1/inquiries` form deferred to Stage 2.
 
