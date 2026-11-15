@@ -27,11 +27,11 @@ export function Navbar() {
 
   return (
     <header className="relative z-20 border-b border-border bg-surface/90 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-4 sm:px-6 xl:max-w-6xl 2xl:max-w-[90rem] min-[2200px]:max-w-[112rem] min-[2200px]:py-5">
         <Link
           to="/"
           onClick={closeMenu}
-          className="text-base font-semibold tracking-tight text-text transition-colors hover:text-cobalt-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light"
+          className="text-base font-semibold tracking-tight text-text transition-colors hover:text-cobalt-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light min-[2200px]:text-lg"
         >
           {SITE_CONFIG.name}
         </Link>

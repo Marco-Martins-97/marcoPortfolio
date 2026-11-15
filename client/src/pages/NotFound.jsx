@@ -10,7 +10,7 @@ export function NotFound() {
 
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-start justify-center px-4 py-16 sm:px-6">
-      <p className="font-mono text-xs font-semibold text-amber uppercase">404</p>
+      <p className="font-mono text-xs font-semibold text-cobalt-light uppercase">404</p>
       <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-4xl">
         {t({ en: 'Page not found', pt: 'Página não encontrada' })}
       </h1>
@@ -22,7 +22,7 @@ export function NotFound() {
       </p>
       <Link
         to="/"
-        className="mt-6 inline-flex min-h-9 items-center rounded-md bg-amber px-4 py-2 text-xs font-semibold text-obsidian transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber"
+        className="mt-6 inline-flex min-h-9 items-center rounded-md bg-cobalt-strong px-4 py-2 text-xs font-semibold text-text transition-colors hover:bg-cobalt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light"
       >
         {t({ en: 'Back to Home', pt: 'Voltar ao Início' })}
       </Link>

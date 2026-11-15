@@ -6,8 +6,8 @@
   --color-border: #1E293B;
   --color-text: #F8FAFC;
   --color-muted: #94A3B8;
-  --color-amber: #F59E0B;
   --color-cobalt: #3B82F6;
+  --color-cobalt-strong: #2563EB;
   --color-cobalt-light: #60A5FA;
   --color-live: #34D399;
   --color-building: #FBBF24;
@@ -16,13 +16,6 @@
 :root {
   color-scheme: dark;
 }
-
-body {
-  background-color: var(--color-obsidian);
-  color: var(--color-text);
-  -webkit-font-smoothing: antialiased;
-}
-
 
 body {
   background-color: var(--color-obsidian);

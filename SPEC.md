@@ -61,7 +61,7 @@
 ### Site Map & Route Architecture
 | Route | Page | Purpose & Content |
 | :--- | :--- | :--- |
-| `/` | **Homepage** | Simple, clean landing page with **2–3 strategic CTAs** for small-business freelance leads, primary project highlights, and recruiter entry point. |
+| `/` | **Homepage** | Clean, client-friendly landing page with plain-language value propositions, direct email + copy-email CTAs, and redirect CTA to `/projects`. |
 | `/projects` | **Projects Index** | Two-tier showcase: **Primary Projects** (*Root Studio Fitness*, *Marco Portfolio & Web Studio*, *HomeLab*, *Obelisk*) linking to detail pages; **Secondary Projects** (6 curated backend APIs, frontend apps, PHP plugin & systems) linking directly to GitHub/Demo. |
 | `/projects/:slug` | **Project Details** | Dedicated deep-dive page for Primary Projects with full overview, build status (`live` \| `building` \| `planning`), tech stack, architectural/business highlights, and placeholder screenshot gallery. |
 | `/about` | **About** | Concise developer bio, experience, education, AI-augmented engineering workflow, hardware/maker interests, and direct contact/resume options. |
@@ -71,7 +71,7 @@
 ## 4. Functional Scope & Real Content Inventory
 ### Stage 1 — Static Frontend, API-Ready (Current Milestone)
 - [x] **Bilingual (`pt-PT` / `EN`) Toggle:** Instant language switch synced across navigation, UI copy, and project content.
-- [ ] **`/` Homepage:** Clean hero, freelance small-business value proposition, **2–3 clear CTAs**, and featured Primary Projects preview.
+- [x] **`/` Homepage:** Clean hero, plain-language small-business value proposition, **2–3 clear CTAs** (email + copy-email fallback + `/projects` & `/about` redirects).
 - [ ] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with `Live`/`Building`/`Planning` badges) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
 - [ ] **`/projects/:slug` Project Details:** Full case study/detail view with placeholder screenshot gallery, stack badges, status badge, and Live/GitHub links.
 - [ ] **`/about` Page:** Public-safe profile, experience, education, tech stack, and direct contact links.
