@@ -24,7 +24,7 @@
 
 ## 2. Tech Stack & Infrastructure (MERN — JavaScript ES6+)
 - **Language:** JavaScript (`ES6+`, **no TypeScript**) + comprehensive JSDoc (`@param`, `@returns`, `@throws`) & inline comments.
-- **Frontend (Stage 1):** React (Latest Stable) + Vite + Tailwind CSS + React Router.
+- **Frontend (Stage 1):** React (Latest Stable) + Vite + Tailwind CSS + React Router + `react-icons`.
 - **Backend (Stage 2):** Node.js (Active LTS) + Express.
 - **Database & ODM (Stage 2):** MongoDB Atlas (`M0`) + Mongoose.
 - **Media CDN (Stage 2 / Stage 1-compatible URLs):** Cloudinary (Responsive image hosting + `f_auto,q_auto` transforms).
@@ -47,13 +47,13 @@
 
 ## 3. UI/UX, Visual Design System & Site Map
 - **Theme:** Dark Mode Default — simple, clean, modern, high-readability layout.
-- **Responsive Strategy (Strict Mobile-First):** Design and style all layouts for mobile viewports (`320px–375px`) first using unprefixed Tailwind utilities (single-column stacks, touch-friendly targets `>= 24x24px` / `44px` on coarse pointers, zero horizontal scroll), progressively enhancing for tablet/desktop via `sm:`, `md:`, and `lg:` breakpoints.
-- **Color Palette (Dual Semantic — Cobalt + Amber):**
+- **Responsive Strategy (Strict Mobile-First + 4K Scaling):** Design and style all layouts for narrow mobile viewports (`320px–379px`) first using unprefixed Tailwind utilities (single-column stacks, centered headings, justified descriptions, touch-friendly targets `>= 24x24px` / `44px` on coarse pointers, zero horizontal scroll). Keep mobile & tablet aligned (`< lg`), and progressively enhance for desktop (`lg:`) and 4K (`xl:max-w-6xl 2xl:max-w-[90rem] min-[2200px]:max-w-[112rem]`). Sync per-route `<title>` via `useDocumentTitle`.
+- **Color Palette (Pure Cobalt Dark Theme):**
   - **Primary Background:** Deep Charcoal / Obsidian (`#0A0A0C`)
   - **Surface / Cards:** Elevated Slate (`#121216`) with subtle borders (`#1E293B`)
   - **Primary Text:** Crisp White (`#F8FAFC`)
   - **Secondary Text:** Light Gray (`#94A3B8` / `#CBD5E1`)
-  - **Primary CTA Accent (Freelance / Conversion):** Amber (`#F59E0B`) with dark text (`#0A0A0C`) for `~9.8:1` contrast
+  - **Primary CTA Accent:** Cobalt Strong (`#2563EB`) with crisp white text (`#F8FAFC`, `~5.0:1` WCAG AA contrast)
   - **Secondary Accent (Engineering / Navigation / Links):** Cobalt (`#3B82F6` borders/badges, `#60A5FA` text links on dark surfaces)
   - **Status Badges:** Emerald (`#34D399` on `rgba(16, 185, 129, 0.14)`) for `Live`; Amber (`#FBBF24` on `rgba(245, 158, 11, 0.14)`) for `Building`; Cobalt Light (`#60A5FA` on `rgba(59, 130, 246, 0.14)`) for `Planning`
 - **UI Language / i18n:** Bilingual **`pt-PT` & `EN`** via lightweight React Context + schema-mirrored `{ en, pt }` content objects (no heavy i18n framework overhead).
@@ -76,7 +76,7 @@
 - [ ] **`/projects/:slug` Project Details:** Full case study/detail view with placeholder screenshot gallery, stack badges, status badge, and Live/GitHub links.
 - [x] **`/about` Page:** Public-safe profile, portrait image, experience, education, tech stack, and direct contact links.
 - [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
-- [ ] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback; full Express `/api/v1/inquiries` form deferred to Stage 2.
+- [x] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback on `/` and `/about`; full Express `/api/v1/inquiries` form deferred to Stage 2.
 
 ### Stage 2 — MERN Backend Integration (Next Milestone)
 - [ ] **Express API + MongoDB Atlas (`M0`):** Implement `/api/v1/health`, `/api/v1/projects`, and `/api/v1/inquiries`.
@@ -213,3 +213,5 @@
 - **[2026-11-14] ADR-002 — Static-First Initial Render + Background Health Wake-up Ping:** Chose to render core portfolio sections and baseline project cards from Vercel's static bundle while asynchronously pinging `GET /api/v1/health` on mount in Stage 2. **Trade-off:** Eliminates Render Free Tier 30–50s cold-start bounce for first-time visitors, while accepting brief eventual consistency if newly added DB projects require API hydration.
 - **[2026-11-14] ADR-003 — Two-Stage Delivery via Async Service Layer:** Stage 1 builds the frontend independently using local seed files wrapped in async service adapters matching Stage 2 Mongoose shapes. **Trade-off:** Allows fast Stage 1 deployment and minimal refactoring in Stage 2, at the minor cost of adding async loading/error states in React from day one.
 - **[2026-11-14] ADR-004 — Lightweight Bilingual (`pt-PT` / `EN`) Strategy:** Store localized copy in `{ en, pt }` fields mirroring MongoDB documents, switched via React Context. **Trade-off:** Zero external i18n bundle weight and seamless Stage 2 DB alignment, assuming copy volume remains compact across 4 core routes.
+- **[2026-11-15] ADR-005 — Pure Cobalt Primary Accent (Replacing Amber):** Switched primary CTAs from Amber (`#F59E0B`) to Cobalt Strong (`#2563EB` with `#F8FAFC` text, `~5.0:1` WCAG AA contrast) to unify the dark engineering/studio identity. **Trade-off:** Slightly lower contrast than dark-on-amber (`5.0:1` vs `9.8:1`), while still comfortably clearing WCAG 2.2 AA and creating a cleaner single-hue visual system.
+- **[2026-11-15] ADR-006 — `react-icons` & Local WebP Assets:** Adopted `react-icons` (`si`/`fi`) for tree-shaken tech stack icons and local WebP conversion (`profile.webp`) in Stage 1 until Stage 2 Cloudinary media is wired. **Trade-off:** Larger `node_modules` install footprint on disk in exchange for official monochrome tech logos and minimal runtime bundle overhead.

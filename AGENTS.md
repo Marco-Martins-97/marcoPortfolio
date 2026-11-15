@@ -46,7 +46,8 @@ Your core mission is to build this project incrementally alongside Marco—writi
    - **Explain WHY, Not Redundant Syntax:** Add clear, educational inline comments explaining architectural intent, business rules, security measures, and non-obvious logic; flag missing JSDoc/comments or noisy `// loop through items` comments during code reviews.
 5. **Production-Grade Code Reviews:** Audit all code against real-world production standards:
    - **General:** Clean Code, SOLID, DRY, proper error handling (no silent `catch` blocks).
-   - **Frontend:** **Strict Mobile-First layouts** (author base styles/Tailwind utilities for narrow mobile screens `320px+` first, scaling up progressively via `sm:`, `md:`, `lg:`; flag desktop-first overrides or horizontal overflow), semantic HTML5, accessibility (`a11y`), state management, and preventing unnecessary re-renders.
+   - **Frontend:** **Strict Mobile-First layouts** (author base styles/Tailwind utilities for narrow mobile screens `320px+` first, scaling up progressively via `min-[380px]:`, `sm:`, `md:`, `lg:`, `xl:`, `2xl:`, `min-[2200px]:`; flag desktop-first overrides or horizontal overflow), semantic HTML5, accessibility (`a11y`), state management, and preventing unnecessary re-renders.
+     - **Established Layout & UI Conventions:** Mobile & tablet (`< lg`) use centered headings (`text-center lg:text-left`), justified descriptions (`text-justify lg:text-left`), and 1-column stacks on `< 380px`; 4K screens scale containers via `max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem] min-[2200px]:max-w-[112rem]` with `flex flex-1 flex-col justify-center`; tech/UI icons use `react-icons` (`aria-hidden="true"`); routes sync `<title>` via `useDocumentTitle`.
    - **Backend & DB:** Input validation at API boundaries, N+1 query prevention, proper indexing, OWASP security basics, secret & PII hygiene.
 6. **Incremental Focus:** Work strictly on the current piece. Do not over-engineer or scaffold future stages prematurely.
 
