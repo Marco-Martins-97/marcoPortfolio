@@ -1,32 +1,21 @@
 import { useEffect, useState } from 'react'
-import { FiDatabase } from 'react-icons/fi'
-import {
-  SiDocker,
-  SiExpress,
-  SiLinux,
-  SiMongodb,
-  SiNodedotjs,
-  SiReact,
-  SiTailwindcss,
-  SiVite,
-  SiWordpress,
-} from 'react-icons/si'
 import profileImg from '../assets/profile.webp'
 import { SITE_CONFIG, buildMailtoHref } from '../data/siteConfig.js'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import { useLanguage } from '../hooks/useLanguage.js'
+import { getTechIcon } from '../utils/techIcons.js'
 
 const CORE_STACK = [
-  { name: 'React', Icon: SiReact },
-  { name: 'Vite', Icon: SiVite },
-  { name: 'Tailwind CSS', Icon: SiTailwindcss },
-  { name: 'Node.js', Icon: SiNodedotjs },
-  { name: 'Express', Icon: SiExpress },
-  { name: 'MongoDB', Icon: SiMongodb },
-  { name: 'PHP / WordPress', Icon: SiWordpress },
-  { name: 'SQL', Icon: FiDatabase },
-  { name: 'Docker', Icon: SiDocker },
-  { name: 'Linux', Icon: SiLinux },
+  'React',
+  'Vite',
+  'Tailwind CSS',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'PHP / WordPress',
+  'SQL',
+  'Docker',
+  'Linux',
 ]
 
 const CREDENTIALS = [
@@ -242,18 +231,18 @@ export function About() {
               {t({ en: 'Core Technologies', pt: 'Tecnologias Principais' })}
             </h3>
             <ul className="grid grid-cols-1 gap-2 min-[380px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:flex lg:flex-wrap lg:justify-start">
-              {CORE_STACK.map((tech) => {
-                const TechIcon = tech.Icon
+              {CORE_STACK.map((techName) => {
+                const TechIcon = getTechIcon(techName)
                 return (
                   <li
-                    key={tech.name}
+                    key={techName}
                     className="inline-flex items-center justify-center gap-1.5 rounded-md border border-border bg-obsidian px-2.5 py-1.5 font-mono text-xs text-text lg:justify-start min-[2200px]:text-sm"
                   >
                     <TechIcon
                       aria-hidden="true"
                       className="h-3.5 w-3.5 shrink-0 text-cobalt-light"
                     />
-                    <span>{tech.name}</span>
+                    <span>{techName}</span>
                   </li>
                 )
               })}

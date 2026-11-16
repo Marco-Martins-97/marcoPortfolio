@@ -58,3 +58,34 @@ export async function getProjectBySlug(slug) {
   return match ?? null
 }
 
+/**
+ * Resolves the previous and next projects around a given slug in displayOrder.
+ * Only navigates across primary projects when the current project is primary,
+ * keeping sequential browsing focused on detailed showcase builds.
+ *
+ * @param {string} slug - Current project slug.
+ * @returns {Promise<{ prev: object | null, next: object | null }>} Adjacent project records.
+ * @throws {Error} When `slug` is missing or not a non-empty string.
+ */
+export async function getAdjacentProjects(slug) {
+  if (typeof slug !== 'string' || slug.trim() === '') {
+    throw new Error('getAdjacentProjects requires a non-empty slug string.')
+  }
+
+  const normalizedSlug = slug.trim().toLowerCase()
+  const ordered = [...PROJECTS].sort((a, b) => a.displayOrder - b.displayOrder)
+  const current = ordered.find((project) => project.slug === normalizedSlug)
+  if (!current) return { prev: null, next: null }
+
+  const pool =
+    current.tier === 'primary'
+      ? ordered.filter((project) => project.tier === 'primary')
+      : ordered
+  const idx = pool.findIndex((project) => project.slug === normalizedSlug)
+
+  return {
+    prev: idx > 0 ? pool[idx - 1] : null,
+    next: idx >= 0 && idx < pool.length - 1 ? pool[idx + 1] : null,
+  }
+}
+

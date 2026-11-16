@@ -1,3 +1,18 @@
+import homelabCover from '../assets/projects/homelab/cover.webp'
+import obeliskCover from '../assets/projects/obelisk/cover.webp'
+import rootV01AboutMobile from '../assets/projects/root/v01-about-mobile.webp'
+import rootV01HomeDesktop from '../assets/projects/root/v01-home-desktop.webp'
+import rootV01HomeMobile from '../assets/projects/root/v01-home-mobile.webp'
+import rootV01PlansDesktop from '../assets/projects/root/v01-plans-desktop.webp'
+import rootV01PlansMobile from '../assets/projects/root/v01-plans-mobile.webp'
+import rootV1AdminDesktop from '../assets/projects/root/v1-admin-desktop.webp'
+import rootV1DashboardDesktop from '../assets/projects/root/v1-dashboard-desktop.webp'
+import rootV1ExerciseModalMobile from '../assets/projects/root/v1-exercise-modal-mobile.webp'
+import rootV1ExercisesDesktop from '../assets/projects/root/v1-exercises-desktop.webp'
+import rootV1MaintDesktop from '../assets/projects/root/v1-maint-desktop.webp'
+import rootV1WorkoutDesktop from '../assets/projects/root/v1-workout-desktop.webp'
+import rootV1WorkoutMobile from '../assets/projects/root/v1-workout-mobile.webp'
+
 /**
  * Stage 1 project seed catalog mirroring the Stage 2 Mongoose `Project` schema.
  * Keeping identical field names and `{ en, pt }` shapes lets `projectService.js`
@@ -11,6 +26,11 @@ export const PROJECTS = [
     tier: 'primary',
     category: 'business-template',
     projectStatus: 'live',
+    meta: {
+      role: { en: 'Full-Stack Developer', pt: 'Full-Stack Developer' },
+      hosting: 'Vercel · Render · Atlas · Cloudinary · Pi Keepalive',
+      timeline: { en: 'Jun 2026 – Nov 2026', pt: 'Jun 2026 – Nov 2026' },
+    },
     summary: {
       en: 'Production SEO/AIEO business website and full-stack member/staff/admin PWA for a fitness studio in Esposende.',
       pt: 'Website empresarial com SEO/AIEO e PWA full-stack para membros, equipa e administração de um estúdio de treino em Esposende.',
@@ -21,16 +41,28 @@ export const PROJECTS = [
     },
     highlights: [
       {
-        en: '4 RBAC tiers (member, staff, admin, super_admin) with single super-admin invariant',
-        pt: '4 níveis RBAC (membro, equipa, admin, super_admin) com invariante de super-admin único',
+        en: '4-Tier RBAC (member, staff, admin, super_admin) with a single super-admin invariant enforced at both Mongoose schema and service levels',
+        pt: 'RBAC em 4 níveis (member, staff, admin, super_admin) com invariante de super-admin único garantido no schema Mongoose e na camada de serviço',
       },
       {
-        en: 'Stateful SHA-256 HttpOnly cookie sessions with device-fingerprint hijack detection',
-        pt: 'Sessões stateful em cookie HttpOnly SHA-256 com deteção de desvio por dispositivo',
+        en: 'Stateful SHA-256 HttpOnly cookie sessions (no JWTs) bound to device fingerprint—replays immediately terminate the session and log a forensic SecurityIncident',
+        pt: 'Sessões stateful em cookie HttpOnly SHA-256 (sem JWTs) ligadas ao dispositivo—tentativas de sequestro terminam a sessão e registam um SecurityIncident forense',
       },
       {
-        en: '226 automated backend tests using Vitest, Supertest, and mongodb-memory-server',
-        pt: '226 testes automatizados de backend com Vitest, Supertest e mongodb-memory-server',
+        en: 'Live PWA workout player supporting single exercises & circuits, set-by-set load (kg) logging, circular rest timer, and 24h auto-completion',
+        pt: 'Reprodutor de treino PWA em tempo real para exercícios e circuitos, registo de carga (kg) por série, temporizador de descanso e fecho automático às 24h',
+      },
+      {
+        en: '+650 exercise library with start/peak photos & Cloudinary videos, reusable staff templates, and in-app support ticketing (/mail)',
+        pt: 'Biblioteca com +650 exercícios, fotos e vídeos no Cloudinary, templates reutilizáveis para treinadores e sistema interno de tickets (/mail)',
+      },
+      {
+        en: 'Raspberry Pi systemd keepalive service pinging Render every 12m to prevent cold starts + full JSON database backup/restore',
+        pt: 'Serviço keepalive em Raspberry Pi (systemd) a pingar o Render a cada 12m contra cold starts + backup e restauro integral da BD em JSON',
+      },
+      {
+        en: '226 automated backend tests across 9 suites using Vitest 5, Supertest, and mongodb-memory-server',
+        pt: '226 testes automatizados de backend em 9 suites com Vitest 5, Supertest e mongodb-memory-server',
       },
     ],
     techStack: [
@@ -42,9 +74,163 @@ export const PROJECTS = [
       'Express',
       'MongoDB',
       'Cloudinary',
+      'Leaflet',
+      'Vitest',
     ],
-    thumbnail: null,
+    thumbnail: rootV01HomeDesktop,
     screenshots: [],
+    versions: [
+      {
+        version: 'v1.0.0',
+        title: { en: 'Full-Stack PWA', pt: 'PWA Full-Stack' },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Added member, trainer, admin, and super-admin portals (/dashboard, /workout, /workouts, /exercises, /mail)',
+            pt: 'Adicionados portais de membro, treinador, admin e super-admin (/dashboard, /workout, /workouts, /exercises, /mail)',
+          },
+          {
+            en: 'Implemented stateful SHA-256 sessions, hijack forensic audit, invite QR codes, and JSON database backup/restore',
+            pt: 'Implementadas sessões stateful SHA-256, auditoria forense de sequestro, códigos QR de registo e backup/restauro JSON',
+          },
+        ],
+        screenshots: [
+          {
+            src: rootV1WorkoutDesktop,
+            device: 'desktop',
+            route: '/workout',
+            label: { en: 'Live Player', pt: 'Sessão Ativa' },
+            caption: {
+              en: 'Live workout player with session progress and timer',
+              pt: 'Reprodutor de treino em direto com progresso e cronómetro',
+            },
+          },
+          {
+            src: rootV1WorkoutMobile,
+            device: 'mobile',
+            route: '/workout',
+            label: { en: 'Rest Timer', pt: 'Temporizador' },
+            caption: {
+              en: 'PWA set tracking and floating rest timer',
+              pt: 'Registo de séries PWA e temporizador de descanso flutuante',
+            },
+          },
+          {
+            src: rootV1ExerciseModalMobile,
+            device: 'mobile',
+            route: '/workout',
+            label: { en: 'Exercise Guide', pt: 'Guia Exercício' },
+            caption: {
+              en: 'Step-by-step exercise instructions and target muscle groups',
+              pt: 'Instruções passo a passo e grupos musculares alvo',
+            },
+          },
+          {
+            src: rootV1DashboardDesktop,
+            device: 'desktop',
+            route: '/dashboard',
+            label: { en: 'Overview', pt: 'Painel' },
+            caption: {
+              en: 'Role-aware dashboard for members and trainers',
+              pt: 'Painel adaptado por função para membros e treinadores',
+            },
+          },
+          {
+            src: rootV1ExercisesDesktop,
+            device: 'desktop',
+            route: '/exercises',
+            label: { en: '+650 Library', pt: '+650 Exercícios' },
+            caption: {
+              en: 'Illustrated +650 exercise library with muscle and equipment filters',
+              pt: 'Catálogo ilustrado de +650 exercícios com filtros por músculo e equipamento',
+            },
+          },
+          {
+            src: rootV1AdminDesktop,
+            device: 'desktop',
+            route: '/admin-dashboard',
+            label: { en: 'RBAC & Users', pt: 'RBAC & Contas' },
+            caption: {
+              en: 'Admin user management and 4-tier RBAC role badges',
+              pt: 'Gestão de utilizadores e níveis RBAC em 4 camadas',
+            },
+          },
+          {
+            src: rootV1MaintDesktop,
+            device: 'desktop',
+            route: '/maintenence',
+            label: { en: 'Security', pt: 'Segurança' },
+            caption: {
+              en: 'Forensic session hijack audit and JSON backup/restore',
+              pt: 'Auditoria forense de sequestro de sessão e backup/restauro JSON',
+            },
+          },
+        ],
+      },
+      {
+        version: 'v0.1.0',
+        title: { en: 'Public Launch', pt: 'Lançamento Público' },
+        date: 'Jun 2026',
+        changes: [
+          {
+            en: 'Released public Home, Plans, and About pages with SEO/AIEO structure, interactive Leaflet map, and studio schedule',
+            pt: 'Lançamento público das páginas Início, Planos e Sobre com estrutura SEO/AIEO, mapa Leaflet interativo e horários',
+          },
+        ],
+        screenshots: [
+          {
+            src: rootV01HomeDesktop,
+            device: 'desktop',
+            route: '/',
+            label: { en: 'Public Hero', pt: 'Hero Público' },
+            caption: {
+              en: 'Public studio homepage hero on desktop',
+              pt: 'Página inicial pública do estúdio em desktop',
+            },
+          },
+          {
+            src: rootV01HomeMobile,
+            device: 'mobile',
+            route: '/',
+            label: { en: 'Mobile Nav', pt: 'Nav Mobile' },
+            caption: {
+              en: 'Public homepage with mobile bottom navigation',
+              pt: 'Página inicial pública com barra de navegação inferior mobile',
+            },
+          },
+          {
+            src: rootV01PlansDesktop,
+            device: 'desktop',
+            route: '/plans',
+            label: { en: 'Personal Training', pt: 'Treino Pessoal' },
+            caption: {
+              en: 'Personal training and modality overview on desktop',
+              pt: 'Apresentação de treino personalizado e modalidades em desktop',
+            },
+          },
+          {
+            src: rootV01PlansMobile,
+            device: 'mobile',
+            route: '/plans',
+            label: { en: 'Group Classes', pt: 'Aulas Grupo' },
+            caption: {
+              en: 'Group classes schedule and specialty tags on mobile',
+              pt: 'Horários de aulas de grupo e especialidades em mobile',
+            },
+          },
+          {
+            src: rootV01AboutMobile,
+            device: 'mobile',
+            route: '/about',
+            label: { en: 'Map & Hours', pt: 'Mapa & Horários' },
+            caption: {
+              en: 'Interactive Leaflet map, studio contacts, and opening hours',
+              pt: 'Mapa Leaflet interativo, contactos e horários do estúdio',
+            },
+          },
+        ],
+      },
+    ],
     liveUrl: 'https://www.rootstudiofitness.com',
     repoUrl: null,
     featured: true,
@@ -57,6 +243,11 @@ export const PROJECTS = [
     tier: 'primary',
     category: 'engineering',
     projectStatus: 'live',
+    meta: {
+      role: { en: 'Full-Stack Developer', pt: 'Full-Stack Developer' },
+      hosting: 'Vercel · Express API (Stage 2)',
+      timeline: { en: 'Nov 2026 – Present', pt: 'Nov 2026 – Presente' },
+    },
     summary: {
       en: 'Bilingual dark-mode developer portfolio and freelance web studio built with an API-ready two-stage architecture.',
       pt: 'Portfólio bilingue em modo escuro e estúdio web freelance construído com arquitetura em duas fases pronta para API.',
@@ -90,6 +281,11 @@ export const PROJECTS = [
     tier: 'primary',
     category: 'engineering',
     projectStatus: 'planning',
+    meta: {
+      role: { en: 'Systems & Hardware Builder', pt: 'Sistemas & Hardware' },
+      hosting: 'Raspberry Pi Zero 2 W · DietPi',
+      timeline: { en: '2026 – Ongoing', pt: '2026 – Em Curso' },
+    },
     summary: {
       en: 'Low-cost self-hosted server on Raspberry Pi Zero 2 W running DietPi, Pi-hole, FileBrowser, Node/Nginx, and ESP32 sensors.',
       pt: 'Servidor self-hosted de baixo custo em Raspberry Pi Zero 2 W com DietPi, Pi-hole, FileBrowser, Node/Nginx e sensores ESP32.',
@@ -109,10 +305,10 @@ export const PROJECTS = [
       },
     ],
     techStack: ['Raspberry Pi', 'DietPi', 'Linux', 'Nginx', 'Node.js', 'Pi-hole', 'ESP32'],
-    thumbnail: null,
+    thumbnail: homelabCover,
     screenshots: [],
     liveUrl: null,
-    repoUrl: 'https://github.com/Marco-Martins-97',
+    repoUrl: null,
     featured: true,
     displayOrder: 3,
   },
@@ -123,6 +319,11 @@ export const PROJECTS = [
     tier: 'primary',
     category: 'engineering',
     projectStatus: 'planning',
+    meta: {
+      role: { en: 'Game & Full-Stack Developer', pt: 'Game & Full-Stack Developer' },
+      hosting: 'MERN · Socket.io · HTML5 Canvas',
+      timeline: { en: 'In Design', pt: 'Em Planeamento' },
+    },
     summary: {
       en: 'Fantasy web strategy game focused on exploration, commerce, climate biomes, and ancient ruins progression.',
       pt: 'Jogo web de estratégia e fantasia focado em exploração, comércio, biomas climáticos e progressão tecnológica em ruínas.',
@@ -141,8 +342,8 @@ export const PROJECTS = [
         pt: 'Árvore de progressão dupla: tecnologias perdidas em ruínas e magia no Obelisco',
       },
     ],
-    techStack: ['JavaScript', 'HTML5 Canvas', 'Node.js', 'Express'],
-    thumbnail: null,
+    techStack: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io', 'HTML5 Canvas', 'Tailwind CSS'],
+    thumbnail: obeliskCover,
     screenshots: [],
     liveUrl: null,
     repoUrl: null,

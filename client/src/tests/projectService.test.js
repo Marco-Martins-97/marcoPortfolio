@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { getProjectBySlug, getProjects } from '../services/projectService.js'
+import {
+  getAdjacentProjects,
+  getProjectBySlug,
+  getProjects,
+} from '../services/projectService.js'
 
 describe('projectService', () => {
   it('returns all 10 projects sorted by displayOrder', async () => {
@@ -48,6 +52,22 @@ describe('projectService', () => {
     await expect(getProjects({ featured: 'yes' })).rejects.toThrow(/Invalid featured filter/)
     await expect(getProjectBySlug('')).rejects.toThrow(/non-empty slug/)
     await expect(getProjectBySlug(null)).rejects.toThrow(/non-empty slug/)
+    await expect(getAdjacentProjects('')).rejects.toThrow(/non-empty slug/)
+  })
+
+  it('resolves previous and next primary projects in displayOrder', async () => {
+    const first = await getAdjacentProjects('root-studio-fitness')
+    const middle = await getAdjacentProjects('marco-portfolio')
+    const last = await getAdjacentProjects('obelisk')
+    const unknown = await getAdjacentProjects('missing-slug')
+
+    expect(first.prev).toBeNull()
+    expect(first.next?.slug).toBe('marco-portfolio')
+    expect(middle.prev?.slug).toBe('root-studio-fitness')
+    expect(middle.next?.slug).toBe('homelab')
+    expect(last.prev?.slug).toBe('homelab')
+    expect(last.next).toBeNull()
+    expect(unknown).toEqual({ prev: null, next: null })
   })
 })
 
