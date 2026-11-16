@@ -72,8 +72,8 @@
 ### Stage 1 — Static Frontend, API-Ready (Current Milestone)
 - [x] **Bilingual (`pt-PT` / `EN`) Toggle:** Instant language switch synced across navigation, UI copy, and project content.
 - [x] **`/` Homepage:** Clean hero, plain-language small-business value proposition, **2–3 clear CTAs** (email + copy-email fallback + `/projects` & `/about` redirects).
-- [ ] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with `Live`/`Building`/`Planning` badges) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
-- [ ] **`/projects/:slug` Project Details:** Full case study/detail view with placeholder screenshot gallery, stack badges, status badge, and Live/GitHub links.
+- [x] **`/projects` Index Page:** Separated **Primary Projects** (4 core works with full-bleed `16:9` cover previews, overlay `Live`/`Building` badges, uniform tech grids, and 50/50 right-aligned actions) and **Secondary Projects** (6 curated APIs, web apps, plugins & systems).
+- [x] **`/projects/:slug` Project Details:** Full case study/detail view with minimalist inline metadata row (`Role`, `Hosting & Infra`, `Timeline`), architecture highlights, `react-icons` tech chips, collapsible `versions[]` release accordions with miniature thumbnail galleries, native `<dialog>` `ScreenshotLightbox` modal, and sequential `Previous / Next Project` pager.
 - [x] **`/about` Page:** Public-safe profile, portrait image, experience, education, tech stack, and direct contact links.
 - [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
 - [x] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback on `/` and `/about`; full Express `/api/v1/inquiries` form deferred to Stage 2.
@@ -94,7 +94,7 @@
 ### Real Content Inventory (Sanitized GitHub & CV Catalog)
 #### Primary Projects (`/projects/:slug` Deep-Dives)
 1. **Root Studio Fitness** (`Live` — `https://www.rootstudiofitness.com`, private repo)
-   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `PWA`, `Node.js`, `Express`, `MongoDB`, `Cloudinary`
+   - *Stack:* `React`, `Vite`, `Tailwind CSS`, `PWA`, `Node.js`, `Express`, `MongoDB`, `Cloudinary`, `Leaflet`, `Vitest`
    - *Scope:* Production SEO/AIEO website + v1.0.0 full-stack PWA with 4 RBAC roles (`member`, `staff`, `admin`, `super_admin`), live workout player, +650 exercise library, internal mailbox/tickets, stateful `SHA-256` `HttpOnly` cookie sessions with device-fingerprint binding, Raspberry Pi keepalive, and 226 automated tests.
 2. **Marco Portfolio & Web Studio** (`Live` — `https://github.com/Marco-Martins-97/marcoPortfolio`)
    - *Stack:* `React`, `Vite`, `Tailwind CSS`, `React Router`, `Vitest`
@@ -103,7 +103,7 @@
    - *Stack:* `Raspberry Pi`, `DietPi`, `Linux`, `Nginx`, `Node.js`, `Pi-hole`, `ESP32`
    - *Scope:* Low-cost self-hosted daily server on Raspberry Pi Zero 2 W (8 GB OS + 32 GB external storage) running Pi-hole, FileBrowser, Node/Nginx web server, and planned ESP32 environmental/RF sensors.
 4. **Obelisk** (`Planning`)
-   - *Stack:* `JavaScript`, `HTML5 Canvas`, `Node.js`, `Express`
+   - *Stack:* `MongoDB`, `Express`, `React`, `Node.js`, `Socket.io`, `HTML5 Canvas`, `Tailwind CSS`
    - *Scope:* Fantasy browser strategy game inspired by Tribal Wars & TerraFirmaCraft—focused on exploration, commerce, seasons, climate/elevation biomes, lost ruins technologies, and Obelisk magic.
 
 #### Secondary Projects (`/projects` Compact Showcase — 6 Curated Works)
@@ -137,10 +137,12 @@
 - `projectStatus`: Enum (`live` | `building` | `planning`, Default: `live`, Indexed)
 - `summary`: `{ en: String, pt: String }` (Required, max 240 chars per locale)
 - `description`: `{ en: String, pt: String }` (Required for `primary` tier)
+- `meta`: `{ role: { en: String, pt: String }, hosting: String, timeline: { en: String, pt: String } }` (Optional concise header metadata)
 - `highlights`: `[{ en: String, pt: String }]` (Optional key architectural or client outcomes)
 - `techStack`: `[String]` (e.g., `["React", "Tailwind CSS", "Express", "MongoDB"]`)
-- `thumbnail`: `{ url: String, publicId: String, alt: { en: String, pt: String } }`
-- `screenshots`: `[{ url: String, publicId: String, alt: { en: String, pt: String }, caption: { en: String, pt: String } }]` *(Used on `/projects/:slug`)*
+- `thumbnail`: String / `{ url, publicId, alt }` (Stage 1 local WebP import or Stage 2 Cloudinary asset)
+- `screenshots`: `[{ src, device, route, label, caption }]` *(Flat gallery fallback)*
+- `versions`: `[{ version: String, title: { en, pt }, date: String, changes: [{ en, pt }], screenshots: [{ src, device, route, label, caption }] }]` *(Versioned release changelogs & screenshots for `/projects/:slug`)*
 - `liveUrl`: String (Optional, URL format validated)
 - `repoUrl`: String (Optional, URL format validated)
 - `featured`: Boolean (Default: `false`, Indexed)
@@ -215,3 +217,5 @@
 - **[2026-11-14] ADR-004 — Lightweight Bilingual (`pt-PT` / `EN`) Strategy:** Store localized copy in `{ en, pt }` fields mirroring MongoDB documents, switched via React Context. **Trade-off:** Zero external i18n bundle weight and seamless Stage 2 DB alignment, assuming copy volume remains compact across 4 core routes.
 - **[2026-11-15] ADR-005 — Pure Cobalt Primary Accent (Replacing Amber):** Switched primary CTAs from Amber (`#F59E0B`) to Cobalt Strong (`#2563EB` with `#F8FAFC` text, `~5.0:1` WCAG AA contrast) to unify the dark engineering/studio identity. **Trade-off:** Slightly lower contrast than dark-on-amber (`5.0:1` vs `9.8:1`), while still comfortably clearing WCAG 2.2 AA and creating a cleaner single-hue visual system.
 - **[2026-11-15] ADR-006 — `react-icons` & Local WebP Assets:** Adopted `react-icons` (`si`/`fi`) for tree-shaken tech stack icons and local WebP conversion (`profile.webp`) in Stage 1 until Stage 2 Cloudinary media is wired. **Trade-off:** Larger `node_modules` install footprint on disk in exchange for official monochrome tech logos and minimal runtime bundle overhead.
+- **[2026-11-16] ADR-007 — Versioned Release Accordions & Miniature `<dialog>` Lightbox (`/projects/:slug`):** Attached screenshots directly to `versions[]` inside collapsible accordions (latest expanded, older collapsed) with compact lazy-loaded thumbnails that open a native `<dialog>` `ScreenshotLightbox` (`object-contain`, keyboard arrows, `Esc` close). **Trade-off:** Requires one extra click to inspect full-size screenshots, in exchange for compact mobile scrolling and clean mixed `16:9` desktop + `9:19` mobile framing.
+- **[2026-11-16] ADR-008 — Shared `techIcons.js` Mapping & Consistent Card Grids (`/projects`, `/about`):** Extracted `getTechIcon` into `src/utils/techIcons.js` and standardized full-bleed `16:9` cover cards + uniform tech chip grids across pages. **Trade-off:** Unmapped stack names fall back to a generic code icon until registered in `TECH_ICON_MAP`, preventing per-page icon drift.
