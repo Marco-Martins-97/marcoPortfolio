@@ -1,0 +1,45 @@
+# Marco Martins — Full-Stack Developer & Web Studio
+
+> Full-Stack Developer based in Esposende / Braga, Portugal. Building responsive business websites, React + Node.js web applications, REST APIs, and self-hosted hardware tools using AI-augmented, spec-driven workflows.
+
+- **Website:** https://builtbymarco.dev/
+- **Location:** Esposende / Braga, Portugal
+- **Email:** marcomartinswebdev@gmail.com
+- **GitHub:** https://github.com/Marco-Martins-97
+- **LinkedIn:** https://www.linkedin.com/in/marcomartins97
+- **Languages:** English (`EN`), European Portuguese (`pt-PT`)
+
+## Core Stack
+- **Frontend:** React 19, Vite 8, Tailwind CSS v4, React Router v7, PWA, Leaflet
+- **Backend & Data:** Node.js, Express, MongoDB, Mongoose, SQL / SQLite, Redis, Cloudinary
+- **CMS & SEO:** PHP, WordPress, Elementor, Schema.org JSON-LD, SEO & AIEO
+- **Tooling & Systems:** Vitest, Supertest, Docker, Linux, Raspberry Pi, ESP32
+
+## Services
+- **Business Websites:** Mobile-first, fast-loading websites structured for SEO and AI Engine Optimization (AIEO).
+- **Custom Web Tools:** Booking portals, client dashboards, member/staff areas, and custom REST APIs tailored to business workflows.
+
+## Primary Projects
+- **[Root Studio Fitness](https://builtbymarco.dev/projects/root-studio-fitness)** (`Live` — https://www.rootstudiofitness.com): Production SEO/AIEO studio site + full-stack PWA with 4-tier RBAC (`member`, `staff`, `admin`, `super_admin`), stateful `SHA-256` `HttpOnly` cookie sessions with device-fingerprint hijack detection, live workout player, +650 exercise library, internal ticketing (`/mail`), Raspberry Pi `systemd` keepalive, JSON DB backup/restore, and 226 automated Vitest/Supertest backend tests.
+- **[Marco Portfolio & Web Studio](https://builtbymarco.dev/projects/marco-portfolio)** (`Live` — https://github.com/Marco-Martins-97/marcoPortfolio): Bilingual dark-mode developer portfolio and freelance web studio built with React, Vite, Tailwind CSS v4, and a Stage 2 MERN-mirrored service layer.
+- **[HomeLab](https://builtbymarco.dev/projects/homelab)** (`Building`): Low-power self-hosted home server on Raspberry Pi Zero 2 W (DietPi, Pi-hole, FileBrowser, Nginx, Node.js, and planned ESP32 telemetry sensors).
+- **[Obelisk](https://builtbymarco.dev/projects/obelisk)** (`Building`): Browser real-time strategy game concept focused on exploration, commerce, climate/elevation biomes, ancient ruins, and MERN + Socket.io + HTML5 Canvas architecture.
+
+## Secondary Projects
+- **Expense Tracker API** (`expense-tracker-node`): Node.js, Express, MongoDB, Mongoose, JWT REST API.
+- **Workout Tracker API** (`workout-traker-node`): Express, SQLite, JWT, OpenAPI, Jest & Supertest REST API.
+- **Weather API** (`weather-api-node`): Node.js, Express, Redis caching, Dockerized weather proxy.
+- **Movie Browser** (`MovieBrowser`): React, Vite, Tailwind CSS, Context API movie discovery web app.
+- **Schema Generator** (`schemaGenerator`): PHP, WordPress & Elementor plugin generating Schema.org JSON-LD for SEO/AIEO.
+- **Tribal Wars Replica** (`TribalWarsReplica`): HTML5 Canvas, vanilla JavaScript, CSS3 browser strategy prototype.
+
+## Background
+- **Experience:** Web Development Internship at Grupo Érre (Érre Technology) — rebuilt `dessta.pt` in WordPress + custom PHP/Elementor Schema.org plugin.
+- **Education:** Advanced Course in Web Design & Programming at MasterD (Braga), Grade `78/100` (EQF Level 5).
+
+## Key Routes
+- `/` — Overview & Services
+- `/projects` — Primary & Secondary Projects Catalog
+- `/projects/:slug` — Detailed Case Study, Architecture Highlights & Release Changelogs
+- `/about` — Developer Profile, Experience, Tech Stack & Contact
+

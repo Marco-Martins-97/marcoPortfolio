@@ -6,11 +6,153 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Marco Martins — Full-Stack Developer & Web Studio</title>
+  <title>Marco Martins — Full-Stack Developer &amp; Web Studio</title>
+  <meta
+    name="description"
+    content="Marco Martins is a Full-Stack Developer based in Esposende / Braga, Portugal building fast, SEO-ready websites, React + Node.js web apps, and custom business platforms."
+  />
+  <link rel="canonical" href="https://builtbymarco.dev/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://builtbymarco.dev/" />
+  <meta property="og:title" content="Marco Martins — Full-Stack Developer &amp; Web Studio" />
+  <meta
+    property="og:description"
+    content="Full-Stack Developer building responsive web applications, REST APIs, and SEO/AIEO business websites."
+  />
+  <meta property="og:image" content="https://builtbymarco.dev/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marco Martins — Full-Stack Developer &amp; Web Studio" />
+  <meta
+    name="twitter:description"
+    content="Full-Stack Developer building responsive web applications, REST APIs, and SEO/AIEO business websites."
+  />
+  <meta name="twitter:image" content="https://builtbymarco.dev/og-cover.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://builtbymarco.dev/#person",
+          "name": "Marco Martins",
+          "jobTitle": "Full-Stack Developer",
+          "url": "https://builtbymarco.dev/",
+          "image": "https://builtbymarco.dev/og-cover.png",
+          "email": "mailto:marcomartinswebdev@gmail.com",
+          "knowsAbout": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Tailwind CSS",
+            "Progressive Web Apps",
+            "PHP / WordPress",
+            "SEO & AIEO"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Esposende",
+            "addressRegion": "Braga",
+            "addressCountry": "PT"
+          },
+          "sameAs": [
+            "https://github.com/Marco-Martins-97",
+            "https://www.linkedin.com/in/marcomartins97"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://builtbymarco.dev/#service",
+          "name": "Marco Martins — Full-Stack Developer & Web Studio",
+          "url": "https://builtbymarco.dev/",
+          "image": "https://builtbymarco.dev/og-cover.png",
+          "founder": { "@id": "https://builtbymarco.dev/#person" },
+          "areaServed": "Portugal",
+          "email": "mailto:marcomartinswebdev@gmail.com"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://builtbymarco.dev/#projects",
+          "name": "Featured Projects by Marco Martins",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Root Studio Fitness",
+                "applicationCategory": "WebApplication",
+                "operatingSystem": "Web, PWA",
+                "url": "https://www.rootstudiofitness.com",
+                "description": "Production SEO/AIEO fitness studio website and full-stack member/staff/admin PWA with stateful SHA-256 sessions and +650 exercises."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebSite",
+                "name": "Marco Portfolio & Web Studio",
+                "url": "https://builtbymarco.dev/projects/marco-portfolio",
+                "description": "Bilingual EN/pt-PT developer portfolio and freelance web studio built with React, Vite, and Tailwind CSS v4."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "HomeLab",
+                "url": "https://builtbymarco.dev/projects/homelab",
+                "description": "Low-cost self-hosted Raspberry Pi Zero 2 W server running DietPi, Pi-hole, FileBrowser, Nginx, Node.js, and ESP32 sensors."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "WebApplication",
+                "name": "Obelisk",
+                "url": "https://builtbymarco.dev/projects/obelisk",
+                "description": "Browser real-time strategy game concept focused on exploration, commerce, biomes, and ancient ruins progression."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
+  <noscript>
+    <main style="max-width: 720px; margin: 2rem auto; padding: 1.5rem; font-family: system-ui, sans-serif; color: #f8fafc; background: #0a0a0c;">
+      <h1>Marco Martins — Full-Stack Developer &amp; Web Studio</h1>
+      <p>Full-Stack Developer based in Esposende / Braga, Portugal building responsive business websites, React + Node.js web apps, and custom platforms (EN / pt-PT).</p>
+      <h2>Core Stack</h2>
+      <p>React, Vite, Tailwind CSS, Node.js, Express, MongoDB, PHP / WordPress, SQL, Docker, Linux.</p>
+      <h2>Featured Projects</h2>
+      <ul>
+        <li><a href="https://www.rootstudiofitness.com" style="color: #60a5fa;">Root Studio Fitness</a> — SEO/AIEO studio site &amp; full-stack member/staff/admin PWA.</li>
+        <li><a href="https://github.com/Marco-Martins-97/marcoPortfolio" style="color: #60a5fa;">Marco Portfolio &amp; Web Studio</a> — Bilingual portfolio &amp; web studio.</li>
+        <li>HomeLab — Self-hosted Raspberry Pi Zero 2 W server (DietPi, Pi-hole, Nginx, ESP32).</li>
+        <li>Obelisk — Fantasy browser strategy game concept (MERN, Socket.io, HTML5 Canvas).</li>
+      </ul>
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:marcomartinswebdev@gmail.com" style="color: #60a5fa;">marcomartinswebdev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/Marco-Martins-97" style="color: #60a5fa;">github.com/Marco-Martins-97</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/marcomartins97" style="color: #60a5fa;">linkedin.com/in/marcomartins97</a></li>
+      </ul>
+    </main>
+  </noscript>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

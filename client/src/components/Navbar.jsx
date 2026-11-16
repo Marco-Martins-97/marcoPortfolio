@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import logoImg from '../assets/logo.webp'
 import { SITE_CONFIG } from '../data/siteConfig.js'
 import { useLanguage } from '../hooks/useLanguage.js'
 
@@ -31,9 +32,15 @@ export function Navbar() {
         <Link
           to="/"
           onClick={closeMenu}
-          className="text-base font-semibold tracking-tight text-text transition-colors hover:text-cobalt-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light min-[2200px]:text-lg"
+          className="inline-flex shrink-0 items-center rounded-md transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light"
         >
-          {SITE_CONFIG.name}
+          <img
+            src={logoImg}
+            alt={SITE_CONFIG.name}
+            width={480}
+            height={107}
+            className="h-8 w-auto sm:h-9 min-[2200px]:h-10"
+          />
         </Link>
 
         <div className="flex items-center gap-3 sm:gap-6">

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import { useLanguage } from '../hooks/useLanguage.js'
 
 /**
@@ -7,6 +8,11 @@ import { useLanguage } from '../hooks/useLanguage.js'
  */
 export function NotFound() {
   const { t } = useLanguage()
+
+  useDocumentTitle({
+    en: '404 — Page Not Found | Marco Martins',
+    pt: '404 — Página Não Encontrada | Marco Martins',
+  })
 
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-start justify-center px-4 py-16 sm:px-6">

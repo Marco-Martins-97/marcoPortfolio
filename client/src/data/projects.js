@@ -269,7 +269,7 @@ export const PROJECTS = [
     techStack: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Vitest'],
     thumbnail: null,
     screenshots: [],
-    liveUrl: null,
+    liveUrl: 'https://builtbymarco.dev',
     repoUrl: 'https://github.com/Marco-Martins-97/marcoPortfolio',
     featured: true,
     displayOrder: 2,

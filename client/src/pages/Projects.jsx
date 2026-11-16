@@ -45,10 +45,19 @@ export function Projects() {
   const [secondaryProjects, setSecondaryProjects] = useState([])
   const [error, setError] = useState(null)
 
-  useDocumentTitle({
-    en: 'Projects | Marco Martins',
-    pt: 'Projetos | Marco Martins',
-  })
+  useDocumentTitle(
+    {
+      en: 'Projects | Marco Martins',
+      pt: 'Projetos | Marco Martins',
+    },
+    {
+      path: '/projects',
+      description: {
+        en: 'Production web builds, active hardware & game systems, and curated backend/frontend studies by Marco Martins.',
+        pt: 'Projetos web em produção, sistemas de hardware e jogos em curso e estudos selecionados de backend e frontend de Marco Martins.',
+      },
+    }
+  )
 
   useEffect(() => {
     let active = true

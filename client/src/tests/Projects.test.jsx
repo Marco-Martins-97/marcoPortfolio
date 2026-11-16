@@ -61,12 +61,14 @@ describe('Projects page', () => {
     expect(
       await screen.findByRole('heading', { name: 'Projects' }),
     ).toBeInTheDocument()
+    expect(document.title).toBe('Projects | Marco Martins')
 
     fireEvent.click(screen.getByRole('button', { name: /Lang: en/i }))
 
     expect(
       screen.getByRole('heading', { name: 'Projetos' }),
     ).toBeInTheDocument()
+    expect(document.title).toBe('Projetos | Marco Martins')
     expect(
       screen.getByRole('heading', { name: 'Projetos Principais' }),
     ).toBeInTheDocument()

@@ -41,10 +41,16 @@ export function ProjectDetails() {
     activeIndex: 0,
   })
 
-  useDocumentTitle({
-    en: project ? `${project.title} | Marco Martins` : 'Project | Marco Martins',
-    pt: project ? `${project.title} | Marco Martins` : 'Projeto | Marco Martins',
-  })
+  useDocumentTitle(
+    {
+      en: project ? `${project.title} | Marco Martins` : 'Project | Marco Martins',
+      pt: project ? `${project.title} | Marco Martins` : 'Projeto | Marco Martins',
+    },
+    {
+      path: `/projects/${slug}`,
+      description: project?.summary,
+    }
+  )
 
   useEffect(() => {
     let active = true
