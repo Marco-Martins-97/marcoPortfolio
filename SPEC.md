@@ -7,7 +7,7 @@
 ---
 
 ## 1. Overview, Brand Positioning & Privacy
-- **Public Positioning:** **Marco Martins — Full-Stack Developer & Web Studio** (`Esposende / Braga, Portugal`). Never use the *"Junior"* label in public UI copy, metadata, or SEO.
+- **Public Positioning:** **Marco Martins — Web Development** (`Esposende / Braga, Portugal`). Never use the *"Junior"* label in public UI copy, metadata, or SEO.
 - **Problem Statement:** Marco needs a unified web platform that serves two distinct commercial goals: (1) proving full-stack MERN engineering competence to hiring teams, and (2) converting local/small-business prospects looking for clean, reliable, simple homepages.
 - **Target Audience:**
   1. **Tech Recruiters & Hiring Managers:** Evaluating full-stack JavaScript/MERN architecture, code quality, testing discipline, and UI polish.
@@ -58,13 +58,13 @@
   - **Primary CTA Accent:** Cobalt Strong (`#2563EB`) with crisp white text (`#F8FAFC`, `~5.0:1` WCAG AA contrast)
   - **Secondary Accent (Engineering / Navigation / Links):** Cobalt (`#3B82F6` borders/badges, `#60A5FA` text links on dark surfaces)
   - **Status Badges:** Emerald (`#34D399` on `rgba(16, 185, 129, 0.14)`) for `Live`; Amber (`#FBBF24` on `rgba(245, 158, 11, 0.14)`) for `Building`; Cobalt Light (`#60A5FA` on `rgba(59, 130, 246, 0.14)`) for `Planning`
-- **UI Language / i18n:** Bilingual **`pt-PT` & `EN`** via lightweight React Context + schema-mirrored `{ en, pt }` content objects (no heavy i18n framework overhead).
+- **UI Language / i18n:** Bilingual **`pt-PT` & `EN`** (**`pt-PT` default** on first visit, persisted in `localStorage`) via lightweight React Context + schema-mirrored `{ en, pt }` content objects (no heavy i18n framework overhead).
 
 ### Site Map & Route Architecture
 | Route | Page | Purpose & Content |
 | :--- | :--- | :--- |
 | `/` | **Homepage** | Clean, client-friendly landing page with plain-language value propositions, direct email + copy-email CTAs, and redirect CTA to `/projects`. |
-| `/projects` | **Projects Index** | Two-tier showcase: **Primary Projects** (*Root Studio Fitness*, *Marco Portfolio & Web Studio*, *HomeLab*, *Obelisk*) linking to detail pages; **Secondary Projects** (6 curated backend APIs, frontend apps, PHP plugin & systems) linking directly to GitHub/Demo. |
+| `/projects` | **Projects Index** | Two-tier showcase: **Primary Projects** (*Root Studio Fitness*, *BuiltByMarco.dev*, *HomeLab*, *Obelisk*) linking to detail pages; **Secondary Projects** (6 curated backend APIs, frontend apps, PHP plugin & systems) linking directly to GitHub/Demo. |
 | `/projects/:slug` | **Project Details** | Dedicated deep-dive page for Primary Projects with full overview, build status (`live` \| `building` \| `planning`), tech stack, architectural/business highlights, and placeholder screenshot gallery. |
 | `/about` | **About** | Concise developer bio, experience, education, AI-augmented engineering workflow, hardware/maker interests, and direct contact/resume options. |
 
@@ -78,7 +78,7 @@
 - [x] **`/projects/:slug` Project Details:** Full case study/detail view with minimalist inline metadata row (`Role`, `Hosting & Infra`, `Timeline`), architecture highlights, `react-icons` tech chips, collapsible `versions[]` release accordions with miniature thumbnail galleries, native `<dialog>` `ScreenshotLightbox` modal, and sequential `Previous / Next Project` pager.
 - [x] **`/about` Page:** Public-safe profile, portrait image, experience, education, tech stack, and direct contact links.
 - [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
-- [x] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback on `/` and `/about`; full Express `/api/v1/inquiries` form deferred to Stage 2.
+- [x] **Stage 1 Contact / CTA Path:** Interactive two-step `<dialog>` `EmailModal` on `/` and `/about` featuring 4 bilingual (`pt-PT` / `EN`) templates (`business`, `webapp`, `hiring`, `general`), editable subject/body, Gmail web compose + `mailto:` launch, clipboard copy fallback, and non-destructive Step 2 confirmation & draft recovery alongside 1-click Copy Email; full Express `/api/v1/inquiries` form deferred to Stage 2.
 - [x] **Brand, SEO/AIEO & Deployment Prep (`https://builtbymarco.dev`):** Cropped Navbar `logo.webp`, dark-backed `favicon.svg`, `1200×630` `og-cover.png`, dynamic `useDocumentTitle` (`document.title`, `<meta name="description">`, `<link rel="canonical">`), `llms.txt`, `robots.txt`, `sitemap.xml`, expanded JSON-LD (`Person`, `ProfessionalService`, `ItemList`), `<noscript>` fallback, and `vercel.json` SPA rewrites.
 
 ### Stage 2 — MERN Backend Integration (Next Milestone)
@@ -99,7 +99,7 @@
 1. **Root Studio Fitness** (`Live` — `https://www.rootstudiofitness.com`, private repo)
    - *Stack:* `React`, `Vite`, `Tailwind CSS`, `PWA`, `Node.js`, `Express`, `MongoDB`, `Cloudinary`, `Leaflet`, `Vitest`
    - *Scope:* Production SEO/AIEO website + v1.0.0 full-stack PWA with 4 RBAC roles (`member`, `staff`, `admin`, `super_admin`), live workout player, +650 exercise library, internal mailbox/tickets, stateful `SHA-256` `HttpOnly` cookie sessions with device-fingerprint binding, Raspberry Pi keepalive, and 226 automated tests.
-2. **Marco Portfolio & Web Studio** (`Live` — `https://github.com/Marco-Martins-97/marcoPortfolio`)
+2. **BuiltByMarco.dev** (`Live` — `https://github.com/Marco-Martins-97/marcoPortfolio`)
    - *Stack:* `React`, `Vite`, `Tailwind CSS`, `React Router`, `Vitest`
    - *Scope:* Bilingual dark-mode engineering portfolio and freelance web studio with two-stage API-ready architecture.
 3. **HomeLab** (`Planning`)

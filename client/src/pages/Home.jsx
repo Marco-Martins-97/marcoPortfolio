@@ -44,10 +44,17 @@ export function Home() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
 
   useDocumentTitle(
-    t({
+    {
       en: `${SITE_CONFIG.name} — Websites & Custom Web Tools`,
       pt: `${SITE_CONFIG.name} — Websites & Ferramentas Web`,
-    })
+    },
+    {
+      path: '/',
+      description: {
+        en: 'Marco Martins is a Full-Stack Developer based in Esposende / Braga, Portugal building fast, SEO-ready websites, React + Node.js web apps, and custom business platforms.',
+        pt: 'Marco Martins é um Full-Stack Developer em Esposende / Braga, Portugal focado em websites rápidos, otimizados para SEO/AIEO, aplicações React + Node.js e ferramentas digitais à medida.',
+      },
+    }
   )
 
   useEffect(() => {
@@ -108,7 +115,7 @@ export function Home() {
           })}
         </p>
 
-        <div className="mx-auto mt-7 grid w-full max-w-md grid-cols-2 gap-3 lg:mx-0 lg:flex lg:max-w-none lg:flex-wrap lg:items-center min-[2200px]:mt-9 min-[2200px]:gap-4">
+        <div className="mx-auto mt-7 grid w-full max-w-md grid-cols-1 gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:flex lg:max-w-none lg:flex-wrap lg:items-center min-[2200px]:mt-9 min-[2200px]:gap-4">
           <button
             type="button"
             onClick={() => setIsEmailModalOpen(true)}
@@ -130,14 +137,14 @@ export function Home() {
 
           <Link
             to="/projects"
-            className="col-span-2 inline-flex min-h-11 items-center justify-center rounded-lg border border-cobalt px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-cobalt/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light lg:col-span-1 min-[2200px]:min-h-13 min-[2200px]:px-6 min-[2200px]:text-base"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-cobalt px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-cobalt/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light min-[380px]:col-span-2 lg:col-span-1 min-[2200px]:min-h-13 min-[2200px]:px-6 min-[2200px]:text-base"
           >
             {t({ en: 'View Projects', pt: 'Ver Projetos' })}
           </Link>
 
           <Link
             to="/about"
-            className="col-span-2 inline-flex min-h-11 items-center justify-center px-2 text-sm font-medium text-cobalt-light transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light lg:col-span-1 min-[2200px]:text-base"
+            className="inline-flex min-h-11 items-center justify-center px-2 text-sm font-medium text-cobalt-light transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light min-[380px]:col-span-2 lg:col-span-1 min-[2200px]:text-base"
           >
             {t({ en: 'About →', pt: 'Sobre →' })}
           </Link>

@@ -100,7 +100,7 @@ export function ProjectDetails() {
         </p>
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2 rounded-lg bg-cobalt px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt-hover"
+          className="inline-flex items-center gap-2 rounded-lg bg-cobalt-strong px-4 py-2 text-sm font-semibold text-text transition-colors hover:bg-cobalt"
         >
           <FiArrowLeft aria-hidden="true" className="h-4 w-4" />
           <span>{t({ en: 'Back to Projects', pt: 'Voltar aos Projetos' })}</span>
@@ -186,7 +186,7 @@ export function ProjectDetails() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-cobalt px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-cobalt-hover sm:text-sm"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-cobalt-strong px-4 py-2 text-xs font-semibold text-text transition-colors hover:bg-cobalt sm:text-sm"
               >
                 <span>{t({ en: 'Visit Live Site', pt: 'Visitar Site' })}</span>
                 <FiExternalLink aria-hidden="true" className="h-3.5 w-3.5" />

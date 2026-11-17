@@ -243,7 +243,7 @@ export const PROJECTS = [
   {
     id: 'marco-portfolio',
     slug: 'marco-portfolio',
-    title: 'Marco Portfolio & Web Studio',
+    title: 'BuiltByMarco.dev',
     tier: 'primary',
     category: 'engineering',
     projectStatus: 'live',

@@ -64,10 +64,17 @@ export function About() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
 
   useDocumentTitle(
-    t({
+    {
       en: `About — ${SITE_CONFIG.name}`,
       pt: `Sobre — ${SITE_CONFIG.name}`,
-    })
+    },
+    {
+      path: '/about',
+      description: {
+        en: 'Learn about Marco Martins — Full-Stack Developer in Esposende / Braga, Portugal, experience at Grupo Érre, MasterD education, core stack, and contact details.',
+        pt: 'Conheça Marco Martins — Full-Stack Developer em Esposende / Braga, Portugal, experiência no Grupo Érre, formação MasterD, tecnologias e contactos.',
+      },
+    }
   )
 
   useEffect(() => {

@@ -209,7 +209,7 @@ export function Projects() {
 
                   <Link
                     to={`/projects/${project.slug}`}
-                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-cobalt px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-cobalt-hover min-[380px]:col-start-2 sm:text-sm"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-cobalt-strong px-3.5 py-2 text-xs font-semibold text-text transition-colors hover:bg-cobalt min-[380px]:col-start-2 sm:text-sm"
                   >
                     <span>{t({ en: 'View Details', pt: 'Ver Detalhes' })}</span>
                     <FiArrowRight aria-hidden="true" className="h-3.5 w-3.5" />

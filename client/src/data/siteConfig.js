@@ -5,8 +5,8 @@
 export const SITE_CONFIG = Object.freeze({
     name: 'Marco Martins',
     role: {
-        en: 'Full-Stack Developer & Web Studio',
-        pt: 'Programador Full-Stack & Estúdio Web',
+        en: 'Full-Stack Web Developer',
+        pt: 'Desenvolvimento Web Full-Stack',
     },
     location: 'Esposende / Braga, Portugal',
     email: 'marcomartinswebdev@gmail.com',

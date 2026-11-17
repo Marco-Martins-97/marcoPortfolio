@@ -1,4 +1,4 @@
-# Marco Martins — Full-Stack Developer & Web Studio
+# Marco Martins — Web Development
 
 > Full-Stack Developer based in Esposende / Braga, Portugal. Building responsive business websites, React + Node.js web applications, REST APIs, and self-hosted hardware tools using AI-augmented, spec-driven workflows.
 
@@ -21,7 +21,7 @@
 
 ## Primary Projects
 - **[Root Studio Fitness](https://builtbymarco.dev/projects/root-studio-fitness)** (`Live` — https://www.rootstudiofitness.com): Production SEO/AIEO studio site + full-stack PWA with 4-tier RBAC (`member`, `staff`, `admin`, `super_admin`), stateful `SHA-256` `HttpOnly` cookie sessions with device-fingerprint hijack detection, live workout player, +650 exercise library, internal ticketing (`/mail`), Raspberry Pi `systemd` keepalive, JSON DB backup/restore, and 226 automated Vitest/Supertest backend tests.
-- **[Marco Portfolio & Web Studio](https://builtbymarco.dev/projects/marco-portfolio)** (`Live` — https://github.com/Marco-Martins-97/marcoPortfolio): Bilingual dark-mode developer portfolio and freelance web studio built with React, Vite, Tailwind CSS v4, and a Stage 2 MERN-mirrored service layer.
+- **[BuiltByMarco.dev](https://builtbymarco.dev/projects/marco-portfolio)** (`Live` — https://github.com/Marco-Martins-97/marcoPortfolio): Bilingual dark-mode developer portfolio and web development studio built with React, Vite, Tailwind CSS v4, and a Stage 2 MERN-mirrored service layer.
 - **[HomeLab](https://builtbymarco.dev/projects/homelab)** (`Building`): Low-power self-hosted home server on Raspberry Pi Zero 2 W (DietPi, Pi-hole, FileBrowser, Nginx, Node.js, and planned ESP32 telemetry sensors).
 - **[Obelisk](https://builtbymarco.dev/projects/obelisk)** (`Building`): Browser real-time strategy game concept focused on exploration, commerce, climate/elevation biomes, ancient ruins, and MERN + Socket.io + HTML5 Canvas architecture.
 

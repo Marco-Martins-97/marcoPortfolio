@@ -15,8 +15,10 @@ export function NotFound() {
   })
 
   return (
-    <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-start justify-center px-4 py-16 sm:px-6">
-      <p className="font-mono text-xs font-semibold text-cobalt-light uppercase">404</p>
+    <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:items-start lg:text-left xl:max-w-6xl 2xl:max-w-[90rem] min-[2200px]:max-w-[112rem]">
+      <p className="font-mono text-xs font-semibold uppercase text-cobalt-light">
+        404
+      </p>
       <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-4xl">
         {t({ en: 'Page not found', pt: 'Página não encontrada' })}
       </h1>
@@ -35,4 +37,3 @@ export function NotFound() {
     </section>
   )
 }
-
