@@ -42,6 +42,7 @@ describe('About', () => {
   beforeEach(() => {
     cleanup()
     window.localStorage.clear()
+    window.localStorage.setItem('portfolio_lang', 'en')
   })
 
   it('renders portrait, public identity, contact links, credentials, stack, and maker section', () => {
@@ -58,10 +59,7 @@ describe('About', () => {
     ).toBeInTheDocument()
     expect(screen.getByText(SITE_CONFIG.location)).toBeInTheDocument()
 
-    expect(screen.getByRole('link', { name: 'Email Me' })).toHaveAttribute(
-      'href',
-      expect.stringContaining(`mailto:${SITE_CONFIG.email}`)
-    )
+    expect(screen.getByRole('button', { name: 'Email Me' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'GitHub ↗' })).toHaveAttribute(
       'href',
       SITE_CONFIG.githubUrl
@@ -111,6 +109,20 @@ describe('About', () => {
     writeText.mockRejectedValueOnce(new Error('Clipboard blocked'))
     await user.click(screen.getByRole('button', { name: 'Copied!' }))
     expect(screen.getByRole('button', { name: 'Copied!' })).toBeInTheDocument()
+  })
+
+  it('opens email modal defaulted to Full-Stack Role template when Email Me is clicked', async () => {
+    const user = userEvent.setup()
+    renderAbout()
+
+    await user.click(screen.getByRole('button', { name: 'Email Me' }))
+
+    expect(
+      screen.getByRole('heading', { name: 'Choose an Email Template' })
+    ).toBeInTheDocument()
+    expect(screen.getByLabelText('2. Subject')).toHaveValue(
+      'Full-Stack Developer Role — Opportunity'
+    )
   })
 })
 

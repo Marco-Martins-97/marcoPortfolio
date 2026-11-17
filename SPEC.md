@@ -1,7 +1,8 @@
 # 📋 PROJECT SPECIFICATION — MARCO MARTINS PORTFOLIO & FREELANCE WEB STUDIO
 
-> **Status:** Planning — Stage 1 (Static Frontend, API-Ready)  
-> **Last Updated:** 2026-11-14  
+> **Status:** Stage 1 Complete — Ready for Vercel Deployment (API-Ready)  
+> **Production Domain:** `https://builtbymarco.dev`  
+> **Last Updated:** 2026-11-16  
 
 ---
 
@@ -13,6 +14,7 @@
   2. **Small-Business Owners:** Non-technical clients seeking a fast, trustworthy homepage/starter website without agency complexity.
 - **AI-Augmented Engineering Narrative:** Present AI tooling transparently as a modern engineering multiplier: **Spec-Driven Development (`SPEC.md` + ADRs), AI-Assisted Prototyping & Test Generation, and Human-Verified Clean Architecture**—never as *"AI wrote my site"*.
 - **PII & CV Security Rule:** Keep unredacted CV PDFs (`*.pdf`, e.g., `marco_martins_cv_27_5_2026.pdf`) strictly out of Git and `client/public/`. Never store or render street address, postal code, phone number, exact date of birth, or non-tech employment details. Approved public contact endpoints only:
+  - Website: `https://builtbymarco.dev`
   - Email: `marcomartinswebdev@gmail.com`
   - GitHub: `https://github.com/Marco-Martins-97`
   - LinkedIn: `https://www.linkedin.com/in/marcomartins97`
@@ -77,6 +79,7 @@
 - [x] **`/about` Page:** Public-safe profile, portrait image, experience, education, tech stack, and direct contact links.
 - [x] **Async Service Layer (`src/services/projectService.js`):** Approach A adapter returning Promise-resolved Stage 2-compatible objects from structured bilingual (`pt-PT` / `EN`) seed data (`src/data/projects.js`).
 - [x] **Stage 1 Contact / CTA Path:** Direct contact links + pre-filled `mailto:` links (`?subject=...&body=...` ready to send) paired with a 1-click Copy Email fallback on `/` and `/about`; full Express `/api/v1/inquiries` form deferred to Stage 2.
+- [x] **Brand, SEO/AIEO & Deployment Prep (`https://builtbymarco.dev`):** Cropped Navbar `logo.webp`, dark-backed `favicon.svg`, `1200×630` `og-cover.png`, dynamic `useDocumentTitle` (`document.title`, `<meta name="description">`, `<link rel="canonical">`), `llms.txt`, `robots.txt`, `sitemap.xml`, expanded JSON-LD (`Person`, `ProfessionalService`, `ItemList`), `<noscript>` fallback, and `vercel.json` SPA rewrites.
 
 ### Stage 2 — MERN Backend Integration (Next Milestone)
 - [ ] **Express API + MongoDB Atlas (`M0`):** Implement `/api/v1/health`, `/api/v1/projects`, and `/api/v1/inquiries`.
@@ -196,9 +199,9 @@
 - **Accessibility (`a11y`):**
   - Target **WCAG 2.2 AA** contrast (`>= 4.5:1` normal text, `>= 3:1` large text/UI icons) on dark surfaces.
   - Semantic HTML5 landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), visible `:focus-visible` outlines, keyboard-accessible interactive elements, and `prefers-reduced-motion` support.
-- **SEO & Discoverability:**
-  - Unique `<title>` and `<meta name="description">`, OpenGraph + Twitter Card tags, canonical URLs, `sitemap.xml`, `robots.txt`.
-  - JSON-LD structured data: `Person` (developer profile) and `ProfessionalService` (small-business web design).
+- **SEO, AIEO & Discoverability (`https://builtbymarco.dev`):**
+  - Dynamic `<title>`, `<meta name="description">`, and `<link rel="canonical">` synced per route via `useDocumentTitle` (`EN` / `pt-PT`), plus OpenGraph + Twitter Card tags (`og-cover.png`), `sitemap.xml`, `robots.txt` (explicitly allowing search and AI search crawlers), and `llms.txt`.
+  - JSON-LD `@graph` structured data: `Person`, `ProfessionalService`, and `ItemList` of featured projects, paired with a semantic `<noscript>` fallback in `index.html` and SPA fallback rewrites in `client/vercel.json`.
 - **Security & Architecture Conventions:**
   - Folder structure: Monorepo (`/client` Vite React + `/server` Express layered `routes`, `controllers`, `services`, `models`, `middlewares`, `validators`).
   - Standardized error format: `{ error: { code, message, details } }` via centralized Express error middleware.

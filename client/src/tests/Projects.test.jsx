@@ -33,6 +33,7 @@ describe('Projects page', () => {
   beforeEach(() => {
     cleanup()
     window.localStorage.clear()
+    window.localStorage.setItem('portfolio_lang', 'en')
   })
 
   it('renders Primary and Secondary project sections with cover preview', async () => {

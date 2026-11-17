@@ -27,6 +27,7 @@ function FooterHarness() {
 describe('Footer', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    window.localStorage.setItem('portfolio_lang', 'en');
   });
 
   it('renders English copyright notice by default', () => {

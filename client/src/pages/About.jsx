@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import profileImg from '../assets/profile.webp'
-import { SITE_CONFIG, buildMailtoHref } from '../data/siteConfig.js'
+import { EmailModal } from '../components/EmailModal.jsx'
+import { SITE_CONFIG } from '../data/siteConfig.js'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import { useLanguage } from '../hooks/useLanguage.js'
 import { getTechIcon } from '../utils/techIcons.js'
@@ -58,8 +59,9 @@ const CREDENTIALS = [
  * @returns {JSX.Element} Complete About page view.
  */
 export function About() {
-  const { language, t } = useLanguage()
+  const { t } = useLanguage()
   const [copied, setCopied] = useState(false)
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
 
   useDocumentTitle(
     t({
@@ -90,12 +92,6 @@ export function About() {
       // Ignore clipboard permission denials silently; the mailto link remains available
     }
   }
-
-  const mailtoHref = buildMailtoHref(
-    language === 'pt'
-      ? 'Contacto via Portfólio — Oportunidade / Projeto'
-      : 'Portfolio Inquiry — Role / Project'
-  )
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-4 py-10 sm:px-6 lg:py-14 xl:max-w-6xl 2xl:max-w-[90rem] 2xl:py-16 min-[2200px]:max-w-[112rem]">
@@ -148,12 +144,13 @@ export function About() {
           </p>
 
           <div className="mx-auto mt-6 grid w-full max-w-md grid-cols-1 gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:flex lg:max-w-none lg:flex-wrap lg:justify-start">
-            <a
-              href={mailtoHref}
-              className="inline-flex min-h-10 items-center justify-center rounded-lg bg-cobalt-strong px-4 py-2 text-sm font-semibold text-text transition-colors hover:bg-cobalt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light"
+            <button
+              type="button"
+              onClick={() => setIsEmailModalOpen(true)}
+              className="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-lg bg-cobalt-strong px-4 py-2 text-sm font-semibold text-text transition-colors hover:bg-cobalt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt-light"
             >
               {t({ en: 'Email Me', pt: 'Enviar Email' })}
-            </a>
+            </button>
 
             <button
               type="button"
@@ -290,6 +287,12 @@ export function About() {
           </p>
         </article>
       </section>
+
+      <EmailModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        defaultTemplateId="hiring"
+      />
     </div>
   )
 }

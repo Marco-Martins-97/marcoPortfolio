@@ -45,6 +45,7 @@ describe('Home', () => {
   beforeEach(() => {
     cleanup()
     window.localStorage.clear()
+    window.localStorage.setItem('portfolio_lang', 'en')
   })
 
   it('renders client-friendly hero, navigation CTAs, mailto link, and 3 service cards', () => {
@@ -63,11 +64,8 @@ describe('Home', () => {
       })
     ).toBeInTheDocument()
 
-    const emailLink = screen.getByRole('link', { name: 'Email Me' })
-    expect(emailLink).toHaveAttribute(
-      'href',
-      expect.stringContaining(`mailto:${SITE_CONFIG.email}`)
-    )
+    const emailButton = screen.getByRole('button', { name: 'Email Me' })
+    expect(emailButton).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: 'View Projects' })).toHaveAttribute(
       'href',
@@ -101,9 +99,62 @@ describe('Home', () => {
         name: 'Websites simples e rápidos para o seu negócio.',
       })
     ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Enviar Email' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Enviar Email' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Ver Projetos' })).toBeInTheDocument()
     expect(screen.getByText('Como Posso Ajudar')).toBeInTheDocument()
+  })
+
+  it('opens interactive email modal, switches templates, and builds mailto/Gmail links', async () => {
+    const user = userEvent.setup()
+    renderHome()
+
+    await user.click(screen.getByRole('button', { name: 'Email Me' }))
+
+    expect(
+      screen.getByRole('heading', { name: 'Choose an Email Template' })
+    ).toBeInTheDocument()
+    expect(screen.getByLabelText('2. Subject')).toHaveValue(
+      'Project Inquiry — Business Website'
+    )
+
+    await user.click(
+      screen.getByRole('button', { name: /Custom Web Tool \/ App/i })
+    )
+    expect(screen.getByLabelText('2. Subject')).toHaveValue(
+      'Project Inquiry — Custom Web Application'
+    )
+
+    const openEmailLink = screen.getByRole('link', { name: 'Open Email App' })
+    expect(openEmailLink).toHaveAttribute(
+      'href',
+      expect.stringContaining(`mailto:${SITE_CONFIG.email}`)
+    )
+    expect(screen.getByRole('link', { name: 'Open in Gmail' })).toHaveAttribute(
+      'href',
+      expect.stringContaining('https://mail.google.com/mail/')
+    )
+
+    // Clicking Open Email App transitions to Step 2 while preserving the draft
+    await user.click(openEmailLink)
+    expect(
+      screen.getByRole('heading', { name: 'Did your email app open?' })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Project Inquiry — Custom Web Application')
+    ).toBeInTheDocument()
+
+    // Back to edit restores Step 1 with the selected template intact
+    await user.click(screen.getByRole('button', { name: /Back to edit/i }))
+    expect(screen.getByLabelText('2. Subject')).toHaveValue(
+      'Project Inquiry — Custom Web Application'
+    )
+
+    // Triggering Step 2 and confirming Sent closes the modal
+    await user.click(screen.getByRole('link', { name: 'Open Email App' }))
+    await user.click(screen.getByRole('button', { name: /Yes, sent/i }))
+    expect(
+      screen.queryByRole('heading', { name: 'Choose an Email Template' })
+    ).not.toBeInTheDocument()
   })
 
   it('copies contact email to clipboard and handles clipboard rejection safely', async () => {

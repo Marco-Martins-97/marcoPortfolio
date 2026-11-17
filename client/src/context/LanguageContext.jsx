@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { LanguageContext } from '../hooks/useLanguage.js'
 
 const STORAGE_KEY = 'portfolio_lang'
+const DEFAULT_LANGUAGE = 'pt'
 const SUPPORTED_LANGUAGES = new Set(['en', 'pt'])
 
 /**
@@ -12,10 +13,10 @@ const SUPPORTED_LANGUAGES = new Set(['en', 'pt'])
 function getInitialLanguage() {
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY)
-    return SUPPORTED_LANGUAGES.has(saved) ? saved : 'en'
+    return SUPPORTED_LANGUAGES.has(saved) ? saved : DEFAULT_LANGUAGE
   } catch {
     // Fallback when storage is blocked (e.g., private browsing or restricted iframes)
-    return 'en'
+    return DEFAULT_LANGUAGE
   }
 }
 

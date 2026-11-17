@@ -1,5 +1,9 @@
 import homelabCover from '../assets/projects/homelab/cover.webp'
 import obeliskCover from '../assets/projects/obelisk/cover.webp'
+import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
+import portfolioCover from '../assets/projects/portfolio/cover.webp'
+import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
+import portfolioProjectsDesktop from '../assets/projects/portfolio/projects-desktop.webp'
 import rootV01AboutMobile from '../assets/projects/root/v01-about-mobile.webp'
 import rootV01HomeDesktop from '../assets/projects/root/v01-home-desktop.webp'
 import rootV01HomeMobile from '../assets/projects/root/v01-home-mobile.webp'
@@ -29,15 +33,15 @@ export const PROJECTS = [
     meta: {
       role: { en: 'Full-Stack Developer', pt: 'Full-Stack Developer' },
       hosting: 'Vercel · Render · Atlas · Cloudinary · Pi Keepalive',
-      timeline: { en: 'Jun 2026 – Nov 2026', pt: 'Jun 2026 – Nov 2026' },
+      timeline: { en: 'Jun 2026 - Nov 2026', pt: 'Jun 2026 - Nov 2026' },
     },
     summary: {
       en: 'Production SEO/AIEO business website and full-stack member/staff/admin PWA for a fitness studio in Esposende.',
       pt: 'Website empresarial com SEO/AIEO e PWA full-stack para membros, equipa e administração de um estúdio de treino em Esposende.',
     },
     description: {
-      en: 'Built from the ground up in two milestones: a public SEO/AIEO site showcasing training plans, team, and interactive map, followed by v1.0.0—a full-stack Progressive Web App with role-based portals for members, trainers, admins, and super-admin. Features a live workout player with rest timer, +650 exercise library, internal mailbox/support tickets, stateful SHA-256 cookie sessions with device-fingerprint binding, JSON database backups, and a Raspberry Pi keepalive service.',
-      pt: 'Desenvolvido de raiz em duas fases: um site público otimizado para SEO/AIEO com planos, equipa e mapa interativo, seguido pela v1.0.0—uma Progressive Web App full-stack com portais por função para membros, treinadores, administradores e super-admin. Inclui reprodutor de treino em tempo real, biblioteca de +650 exercícios, caixa de correio/tickets interna, sessões por cookie SHA-256 com validação de dispositivo, backups JSON da base de dados e serviço keepalive em Raspberry Pi.',
+      en: 'Built from the ground up in two milestones: a public SEO/AIEO site showcasing training plans, team, and interactive map, followed by v1.0.0-a full-stack Progressive Web App with role-based portals for members, trainers, admins, and super-admin. Features a live workout player with rest timer, +650 exercise library, internal mailbox/support tickets, stateful SHA-256 cookie sessions with device-fingerprint binding, JSON database backups, and a Raspberry Pi keepalive service.',
+      pt: 'Desenvolvido de raiz em duas fases: um site público otimizado para SEO/AIEO com planos, equipa e mapa interativo, seguido pela v1.0.0-uma Progressive Web App full-stack com portais por função para membros, treinadores, administradores e super-admin. Inclui reprodutor de treino em tempo real, biblioteca de +650 exercícios, caixa de correio/tickets interna, sessões por cookie SHA-256 com validação de dispositivo, backups JSON da base de dados e serviço keepalive em Raspberry Pi.',
     },
     highlights: [
       {
@@ -45,8 +49,8 @@ export const PROJECTS = [
         pt: 'RBAC em 4 níveis (member, staff, admin, super_admin) com invariante de super-admin único garantido no schema Mongoose e na camada de serviço',
       },
       {
-        en: 'Stateful SHA-256 HttpOnly cookie sessions (no JWTs) bound to device fingerprint—replays immediately terminate the session and log a forensic SecurityIncident',
-        pt: 'Sessões stateful em cookie HttpOnly SHA-256 (sem JWTs) ligadas ao dispositivo—tentativas de sequestro terminam a sessão e registam um SecurityIncident forense',
+        en: 'Stateful SHA-256 HttpOnly cookie sessions (no JWTs) bound to device fingerprint-replays immediately terminate the session and log a forensic SecurityIncident',
+        pt: 'Sessões stateful em cookie HttpOnly SHA-256 (sem JWTs) ligadas ao dispositivo-tentativas de sequestro terminam a sessão e registam um SecurityIncident forense',
       },
       {
         en: 'Live PWA workout player supporting single exercises & circuits, set-by-set load (kg) logging, circular rest timer, and 24h auto-completion',
@@ -245,31 +249,102 @@ export const PROJECTS = [
     projectStatus: 'live',
     meta: {
       role: { en: 'Full-Stack Developer', pt: 'Full-Stack Developer' },
-      hosting: 'Vercel · Express API (Stage 2)',
-      timeline: { en: 'Nov 2026 – Present', pt: 'Nov 2026 – Presente' },
+      hosting: 'Vercel',
+      timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
       en: 'Bilingual dark-mode developer portfolio and freelance web studio built with an API-ready two-stage architecture.',
       pt: 'Portfólio bilingue em modo escuro e estúdio web freelance construído com arquitetura em duas fases pronta para API.',
     },
     description: {
-      en: 'Dual-purpose platform serving both hiring teams and small-business clients. Stage 1 delivers a fast, accessible React + Vite + Tailwind CSS v4 frontend backed by an async service adapter whose schemas mirror the Stage 2 Express and MongoDB Atlas API.',
-      pt: 'Plataforma com duplo objetivo para recrutadores e pequenos negócios. A Fase 1 entrega um frontend rápido e acessível em React + Vite + Tailwind CSS v4 sobre uma camada de serviço assíncrona alinhada com a API Express e MongoDB Atlas da Fase 2.',
+      en: 'Dual-purpose platform serving both hiring teams and small-business clients. Stage 1 delivers a fast, accessible React + Vite + Tailwind CSS v4 frontend backed by an async service adapter whose schemas mirror the Stage 2 Express and MongoDB Atlas API-complete with bilingual EN/pt-PT support, SEO/AIEO structured data, and automated UI/service testing.',
+      pt: 'Plataforma com duplo objetivo para recrutadores e pequenos negócios. A Fase 1 entrega um frontend rápido e acessível em React + Vite + Tailwind CSS v4 sobre uma camada de serviço assíncrona alinhada com a API Express e MongoDB Atlas da Fase 2-com suporte bilingue EN/pt-PT, dados estruturados SEO/AIEO e testes automatizados de UI e serviço.',
     },
     highlights: [
       {
-        en: 'Strict mobile-first responsive layout and WCAG 2.2 AA contrast tokens',
-        pt: 'Layout rigorosamente mobile-first e tokens de contraste WCAG 2.2 AA',
+        en: 'Two-stage API-ready architecture: async service layer in Stage 1 mirroring Stage 2 Mongoose schemas for zero-rewrite Express integration',
+        pt: 'Arquitetura em duas fases pronta para API: camada de serviço assíncrona na Fase 1 alinhada aos esquemas Mongoose da Fase 2 para integração Express sem reescrita',
       },
       {
-        en: 'Schema-mirrored { en, pt } localization with zero external i18n overhead',
-        pt: 'Localização { en, pt } alinhada ao esquema da base de dados sem bibliotecas pesadas',
+        en: 'Zero-dependency bilingual (EN / pt-PT) React Context with schema-mirrored { en, pt } content objects and persistent local preference',
+        pt: 'Contexto React bilingue (EN / pt-PT) sem dependências externas, com objetos de conteúdo { en, pt } e preferência persistente',
+      },
+      {
+        en: 'Strict mobile-first responsive system scaling from 320px phones up to 4K (2200px+) viewports with WCAG 2.2 AA Pure Cobalt dark tokens',
+        pt: 'Sistema responsivo mobile-first rigoroso de ecrãs 320px até 4K (2200px+) com tokens escuros Pure Cobalt em contraste WCAG 2.2 AA',
+      },
+      {
+        en: 'SEO & AIEO readiness: dynamic canonical/description meta sync, llms.txt, JSON-LD @graph (Person, ProfessionalService, ItemList), and <noscript> fallback',
+        pt: 'Otimização SEO & AIEO: sincronização dinâmica de canonical/meta description, llms.txt, JSON-LD @graph e fallback semântico em <noscript>',
+      },
+      {
+        en: 'Automated quality gate with ESLint, Vite production bundling, and 28 Vitest + Testing Library unit and accessibility tests',
+        pt: 'Controlo de qualidade automatizado com ESLint, build de produção Vite e 28 testes unitários e de acessibilidade em Vitest + Testing Library',
       },
     ],
     techStack: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Vitest'],
-    thumbnail: null,
+    thumbnail: portfolioCover,
     screenshots: [],
-    liveUrl: 'https://builtbymarco.dev',
+    versions: [
+      {
+        version: 'v1.0.0',
+        title: { en: 'Stage 1 Static Launch', pt: 'Lançamento Público Fase 1' },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Launched Home, Projects catalog, versioned Project Details with <dialog> lightbox, About, and 404 routes in EN & pt-PT',
+            pt: 'Lançamento das páginas Início, Projetos, Detalhes com galeria <dialog>, Sobre e 404 em EN e pt-PT',
+          },
+          {
+            en: 'Configured builtbymarco.dev SEO/AIEO metadata, OpenGraph banner, llms.txt, sitemap.xml, and Vercel SPA rewrites',
+            pt: 'Configurados metadados SEO/AIEO para builtbymarco.dev, banner OpenGraph, llms.txt, sitemap.xml e rewrites SPA na Vercel',
+          },
+        ],
+        screenshots: [
+          {
+            src: portfolioCover,
+            device: 'desktop',
+            route: '/',
+            label: { en: 'Home & Services', pt: 'Início & Serviços' },
+            caption: {
+              en: 'BuiltByMarco.dev bilingual dark-mode homepage and service cards on desktop',
+              pt: 'Página inicial bilingue em modo escuro e cartões de serviço da BuiltByMarco.dev em desktop',
+            },
+          },
+          {
+            src: portfolioHomeMobile,
+            device: 'mobile',
+            route: '/',
+            label: { en: 'Mobile Hero', pt: 'Hero Mobile' },
+            caption: {
+              en: 'Mobile-first homepage hero, 50/50 CTAs, and stacked service cards',
+              pt: 'Hero mobile-first, botões 50/50 e cartões de serviço empilhados',
+            },
+          },
+          {
+            src: portfolioProjectsDesktop,
+            device: 'desktop',
+            route: '/projects',
+            label: { en: 'Projects Grid', pt: 'Grelha Projetos' },
+            caption: {
+              en: 'Two-column full-bleed project cards with status badges and uniform tech grids',
+              pt: 'Cartões de projeto em duas colunas com imagem completa, estados e grelha de tecnologias',
+            },
+          },
+          {
+            src: portfolioAboutDesktop,
+            device: 'desktop',
+            route: '/about',
+            label: { en: 'About & Stack', pt: 'Sobre & Stack' },
+            caption: {
+              en: 'Profile portrait, experience, education, and react-icons technology stack',
+              pt: 'Retrato de perfil, experiência, formação e tecnologias com react-icons',
+            },
+          },
+        ],
+      },
+    ],
+    liveUrl: null,
     repoUrl: 'https://github.com/Marco-Martins-97/marcoPortfolio',
     featured: true,
     displayOrder: 2,
@@ -284,7 +359,7 @@ export const PROJECTS = [
     meta: {
       role: { en: 'Systems & Hardware Builder', pt: 'Sistemas & Hardware' },
       hosting: 'Raspberry Pi Zero 2 W · DietPi',
-      timeline: { en: '2026 – Ongoing', pt: '2026 – Em Curso' },
+      timeline: { en: '2026 - Ongoing', pt: '2026 - Em Curso' },
     },
     summary: {
       en: 'Low-cost self-hosted server on Raspberry Pi Zero 2 W running DietPi, Pi-hole, FileBrowser, Node/Nginx, and ESP32 sensors.',
@@ -329,8 +404,8 @@ export const PROJECTS = [
       pt: 'Jogo web de estratégia e fantasia focado em exploração, comércio, biomas climáticos e progressão tecnológica em ruínas.',
     },
     description: {
-      en: 'Browser-based strategy game inspired by Tribal Wars and the TerraFirmaCraft mod. Shifts focus from pure warfare to world exploration, trade, and technological evolution across seasons, elevation, temperature, humidity, and diverse biomes—discovering lost technologies in ruins and magical knowledge at the Obelisk.',
-      pt: 'Jogo de estratégia no navegador inspirado em Tribal Wars e no mod TerraFirmaCraft. Muda o foco da guerra pura para exploração, comércio e evolução tecnológica através de estações do ano, elevação, temperatura, humidade e biomas—descobrindo tecnologias perdidas em ruínas e magia no Obelisco.',
+      en: 'Browser-based strategy game inspired by Tribal Wars and the TerraFirmaCraft mod. Shifts focus from pure warfare to world exploration, trade, and technological evolution across seasons, elevation, temperature, humidity, and diverse biomes-discovering lost technologies in ruins and magical knowledge at the Obelisk.',
+      pt: 'Jogo de estratégia no navegador inspirado em Tribal Wars e no mod TerraFirmaCraft. Muda o foco da guerra pura para exploração, comércio e evolução tecnológica através de estações do ano, elevação, temperatura, humidade e biomas-descobrindo tecnologias perdidas em ruínas e magia no Obelisco.',
     },
     highlights: [
       {

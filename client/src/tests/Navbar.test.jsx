@@ -25,6 +25,7 @@ describe('Navbar', () => {
   beforeEach(() => {
     cleanup()
     window.localStorage.clear()
+    window.localStorage.setItem('portfolio_lang', 'en')
   })
 
   it('marks the active route link with aria-current="page"', async () => {

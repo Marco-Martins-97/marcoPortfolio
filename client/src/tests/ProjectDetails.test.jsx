@@ -21,6 +21,7 @@ describe('ProjectDetails page', () => {
   beforeEach(() => {
     cleanup()
     window.localStorage.clear()
+    window.localStorage.setItem('portfolio_lang', 'en')
   })
 
   it('renders metadata strip, release accordions, and interactive lightbox', async () => {

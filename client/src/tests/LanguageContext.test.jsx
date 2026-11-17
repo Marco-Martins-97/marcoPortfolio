@@ -31,7 +31,7 @@ describe('LanguageContext', () => {
     document.documentElement.lang = 'en'
   })
 
-  it('defaults to English and toggles to Portuguese with <html lang="pt-PT">', async () => {
+  it('defaults to European Portuguese and toggles to English with <html lang="en">', async () => {
     const user = userEvent.setup()
 
     render(
@@ -40,16 +40,16 @@ describe('LanguageContext', () => {
       </LanguageProvider>
     )
 
-    expect(screen.getByTestId('lang')).toHaveTextContent('en')
-    expect(screen.getByTestId('greeting')).toHaveTextContent('Hello')
-    expect(document.documentElement.lang).toBe('en')
-
-    await user.click(screen.getByRole('button', { name: /toggle/i }))
-
     expect(screen.getByTestId('lang')).toHaveTextContent('pt')
     expect(screen.getByTestId('greeting')).toHaveTextContent('Olá')
     expect(document.documentElement.lang).toBe('pt-PT')
-    expect(window.localStorage.getItem('portfolio_lang')).toBe('pt')
+
+    await user.click(screen.getByRole('button', { name: /toggle/i }))
+
+    expect(screen.getByTestId('lang')).toHaveTextContent('en')
+    expect(screen.getByTestId('greeting')).toHaveTextContent('Hello')
+    expect(document.documentElement.lang).toBe('en')
+    expect(window.localStorage.getItem('portfolio_lang')).toBe('en')
   })
 
   it('falls back to English when a Portuguese translation is missing', async () => {
@@ -65,7 +65,7 @@ describe('LanguageContext', () => {
     expect(screen.getByTestId('fallback')).toHaveTextContent('English only')
   })
 
-  it('ignores invalid localStorage values and defaults safely to English', () => {
+  it('ignores invalid localStorage values and defaults safely to Portuguese', () => {
     window.localStorage.setItem('portfolio_lang', 'fr')
 
     render(
@@ -74,7 +74,7 @@ describe('LanguageContext', () => {
       </LanguageProvider>
     )
 
-    expect(screen.getByTestId('lang')).toHaveTextContent('en')
+    expect(screen.getByTestId('lang')).toHaveTextContent('pt')
   })
 
   it('throws an explicit error when useLanguage is called outside LanguageProvider', () => {
