@@ -1,5 +1,11 @@
 import homelabCover from '../assets/projects/homelab/cover.webp'
 import obeliskCover from '../assets/projects/obelisk/cover.webp'
+import obeliskV01DevBiomeDesktop from '../assets/projects/obelisk/v01-dev-biome-desktop.webp'
+import obeliskV01DevElevationDesktop from '../assets/projects/obelisk/v01-dev-elevation-desktop.webp'
+import obeliskV01DevGoldDesktop from '../assets/projects/obelisk/v01-dev-gold-desktop.webp'
+import obeliskV01DevMoistureDesktop from '../assets/projects/obelisk/v01-dev-moisture-desktop.webp'
+import obeliskV01DevStoneDesktop from '../assets/projects/obelisk/v01-dev-stone-desktop.webp'
+import obeliskV01GameplayDesktop from '../assets/projects/obelisk/v01-gameplay-desktop.webp'
 import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
 import portfolioCover from '../assets/projects/portfolio/cover.webp'
 import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
@@ -393,35 +399,139 @@ export const PROJECTS = [
     title: 'Obelisk',
     tier: 'primary',
     category: 'engineering',
-    projectStatus: 'planning',
+    projectStatus: 'building',
     meta: {
       role: { en: 'Game & Full-Stack Developer', pt: 'Game & Full-Stack Developer' },
-      hosting: 'MERN · Socket.io · HTML5 Canvas',
-      timeline: { en: 'In Design', pt: 'Em Planeamento' },
+      hosting: 'Vercel · Monorepo (React + Vite + Shared ESM)',
+      timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
-      en: 'Fantasy web strategy game focused on exploration, commerce, climate biomes, and ancient ruins progression.',
-      pt: 'Jogo web de estratégia e fantasia focado em exploração, comércio, biomas climáticos e progressão tecnológica em ruínas.',
+      en: 'Asynchronous browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic 100×100 continent & 25×25 territory engine.',
+      pt: 'MMORTS assíncrono no navegador inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico de continentes 100×100 e territórios 25×25.',
     },
     description: {
-      en: 'Browser-based strategy game inspired by Tribal Wars and the TerraFirmaCraft mod. Shifts focus from pure warfare to world exploration, trade, and technological evolution across seasons, elevation, temperature, humidity, and diverse biomes-discovering lost technologies in ruins and magical knowledge at the Obelisk.',
-      pt: 'Jogo de estratégia no navegador inspirado em Tribal Wars e no mod TerraFirmaCraft. Muda o foco da guerra pura para exploração, comércio e evolução tecnológica através de estações do ano, elevação, temperatura, humidade e biomas-descobrindo tecnologias perdidas em ruínas e magia no Obelisco.',
+      en: 'Asynchronous, browser-based MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.1.0 ships the isomorphic @obelisk/shared deterministic world/territory engine (zero Math.random(), Mulberry32 PRNG, 2D Perlin/fBm noise, Voronoi stone provinces, and BFS moisture) paired with an interactive HTML5 Canvas sandbox with frustum culling and dual Gameplay/Dev inspection layers.',
+      pt: 'MMORTS assíncrono no navegador que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.1.0 entrega o motor isomórfico determinístico @obelisk/shared (zero Math.random(), PRNG Mulberry32, ruído Perlin/fBm 2D, províncias rochosas Voronoi e humidade por BFS) com um sandbox interativo em HTML5 Canvas com frustum culling e vistas Gameplay/Dev.',
     },
     highlights: [
       {
-        en: 'Procedural world layers combining elevation, temperature, humidity, and seasons',
-        pt: 'Camadas de mapa combinando elevação, temperatura, humidade e estações do ano',
+        en: 'Strict seeded determinism (zero Math.random(), enforced by ESLint) using Mulberry32 PRNG, FNV-1a, and 2D Perlin/fBm noise',
+        pt: 'Determinismo estrito por seed (zero Math.random(), validado por ESLint) com PRNG Mulberry32, FNV-1a e ruído Perlin/fBm 2D',
       },
       {
-        en: 'Dual progression tree: lost technologies from ruins and arcane tech from the Obelisk',
-        pt: 'Árvore de progressão dupla: tecnologias perdidas em ruínas e magia no Obelisco',
+        en: '25× Scale Law: derives 6,250,000 territory sub-tiles on demand from tileSeed with Fog-of-War-safe neighbor interpolation',
+        pt: 'Lei de Escala 25×: gera 6.250.000 sub-tiles on-demand a partir do tileSeed com interpolação segura para Fog of War',
+      },
+      {
+        en: 'Procedural geology & hydrology: Voronoi stone provinces (7 rock types), BFS moisture from water tiles, and rarity-scaled ore density fields',
+        pt: 'Geologia e hidrologia procedurais: províncias rochosas Voronoi (7 rochas), humidade por BFS e campos de densidade de minérios por raridade',
+      },
+      {
+        en: 'HTML5 Canvas viewport with frustum culling, cached 16×16 sprites, and Gameplay/Dev data layer heatmaps',
+        pt: 'Viewport HTML5 Canvas com frustum culling, sprites 16×16 em cache e mapas de calor de camadas Gameplay/Dev',
+      },
+      {
+        en: 'Verified by 24 automated Vitest determinism, invariant, and performance benchmark tests across 6 suites',
+        pt: 'Verificado por 24 testes automatizados Vitest de determinismo, invariantes e benchmarks de desempenho em 6 suites',
       },
     ],
-    techStack: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io', 'HTML5 Canvas', 'Tailwind CSS'],
+    techStack: [
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'HTML5 Canvas',
+      'Vitest',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Socket.io',
+    ],
     thumbnail: obeliskCover,
     screenshots: [],
-    liveUrl: null,
-    repoUrl: null,
+    versions: [
+      {
+        version: 'v0.1.0',
+        title: {
+          en: 'Deterministic World Engine & Canvas Sandbox',
+          pt: 'Motor de Mundo Determinístico & Sandbox Canvas',
+        },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Built isomorphic @obelisk/shared deterministic 100×100 Continent and 25×25 Territory generators with Voronoi geology, BFS moisture, and ore prospecting fields',
+            pt: 'Construído o motor isomórfico @obelisk/shared para continentes 100×100 e territórios 25×25 com geologia Voronoi, humidade BFS e campos de prospeção de minérios',
+          },
+          {
+            en: 'Shipped interactive HTML5 Canvas Dev Sandbox with frustum culling, cursor-anchored zoom, Gameplay/Dev toggle, and hex tileSeed inspection',
+            pt: 'Lançado o Sandbox Dev interativo em HTML5 Canvas com frustum culling, zoom ancorado no cursor, alternância Gameplay/Dev e inspeção de tileSeed',
+          },
+        ],
+        screenshots: [
+          {
+            src: obeliskV01GameplayDesktop,
+            device: 'desktop',
+            route: '/',
+            label: { en: 'Gameplay View', pt: 'Vista Gameplay' },
+            caption: {
+              en: 'Gameplay canvas with cached 16×16 biome sprites, central 7×7 settlement footprint, and 100×100 continent minimap',
+              pt: 'Canvas Gameplay com sprites 16×16 em cache, zona central de 7×7 e minimapa continental 100×100',
+            },
+          },
+          {
+            src: obeliskV01DevBiomeDesktop,
+            device: 'desktop',
+            route: '/?view=dev&layer=biome',
+            label: { en: 'Dev: Biome & Inspector', pt: 'Dev: Bioma & Inspetor' },
+            caption: {
+              en: 'Dev mode biome layer with live Tile Inspector showing elevation, temperature, moisture, and hex tileSeed',
+              pt: 'Camada de bioma em modo Dev com Inspetor de Tile mostrando elevação, temperatura, humidade e tileSeed em hex',
+            },
+          },
+          {
+            src: obeliskV01DevElevationDesktop,
+            device: 'desktop',
+            route: '/?view=dev&layer=elevation',
+            label: { en: 'Dev: Elevation', pt: 'Dev: Elevação' },
+            caption: {
+              en: 'Grayscale elevation heatmap with 10× local contrast amplification across territory and continent canvases',
+              pt: 'Mapa de calor de elevação em escala de cinzentos com amplificação de contraste local 10×',
+            },
+          },
+          {
+            src: obeliskV01DevMoistureDesktop,
+            device: 'desktop',
+            route: '/?view=dev&layer=moisture',
+            label: { en: 'Dev: BFS Moisture', pt: 'Dev: Humidade BFS' },
+            caption: {
+              en: 'Multi-source BFS moisture gradient radiating from local territory lakes and rivers',
+              pt: 'Gradiente de humidade por BFS multi-origem a partir dos lagos e rios do território',
+            },
+          },
+          {
+            src: obeliskV01DevStoneDesktop,
+            device: 'desktop',
+            route: '/?view=dev&layer=stone',
+            label: { en: 'Dev: Stone Provinces', pt: 'Dev: Províncias Rochosas' },
+            caption: {
+              en: 'Domain-warped Voronoi stone provinces distributing all 7 rock types across the continent',
+              pt: 'Províncias rochosas Voronoi com domain-warping a distribuir os 7 tipos de rocha pelo continente',
+            },
+          },
+          {
+            src: obeliskV01DevGoldDesktop,
+            device: 'desktop',
+            route: '/?view=dev&layer=ore-gold',
+            label: { en: 'Dev: Gold Prospecting', pt: 'Dev: Prospeção de Ouro' },
+            caption: {
+              en: 'Rarity-scaled gold ore density field hosted within granite bedrock for prospector triangulation',
+              pt: 'Campo de densidade de ouro escalado por raridade em rocha granítica para triangulação por prospetores',
+            },
+          },
+        ],
+      },
+    ],
+    liveUrl: 'https://obelisk.builtbymarco.dev/',
+    repoUrl: 'https://github.com/Marco-Martins-97/obelisk',
     featured: false,
     displayOrder: 4,
   },
