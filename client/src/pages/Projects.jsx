@@ -157,12 +157,12 @@ export function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="flex-1 text-justify text-sm leading-relaxed text-muted lg:text-left min-[2200px]:text-base">
+                <p className="text-justify text-sm leading-relaxed text-muted lg:text-left min-[2200px]:text-base">
                   {t(project.summary)}
                 </p>
 
                 <ul
-                  className="grid grid-cols-1 gap-2 min-[380px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 xl:grid-cols-3"
+                  className="my-auto grid grid-cols-1 gap-2 min-[380px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 xl:grid-cols-3"
                   aria-label={t({ en: 'Technologies', pt: 'Tecnologias' })}
                 >
                   {project.techStack.map((techName) => {

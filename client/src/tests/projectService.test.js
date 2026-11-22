@@ -57,12 +57,12 @@ describe('projectService', () => {
 
   it('resolves previous and next primary projects in displayOrder', async () => {
     const first = await getAdjacentProjects('root-studio-fitness')
-    const middle = await getAdjacentProjects('marco-portfolio')
-    const last = await getAdjacentProjects('obelisk')
+    const middle = await getAdjacentProjects('obelisk')
+    const last = await getAdjacentProjects('marco-portfolio')
     const unknown = await getAdjacentProjects('missing-slug')
 
     expect(first.prev).toBeNull()
-    expect(first.next?.slug).toBe('marco-portfolio')
+    expect(first.next?.slug).toBe('obelisk')
     expect(middle.prev?.slug).toBe('root-studio-fitness')
     expect(middle.next?.slug).toBe('homelab')
     expect(last.prev?.slug).toBe('homelab')

@@ -6,6 +6,10 @@ import obeliskV01DevGoldDesktop from '../assets/projects/obelisk/v01-dev-gold-de
 import obeliskV01DevMoistureDesktop from '../assets/projects/obelisk/v01-dev-moisture-desktop.webp'
 import obeliskV01DevStoneDesktop from '../assets/projects/obelisk/v01-dev-stone-desktop.webp'
 import obeliskV01GameplayDesktop from '../assets/projects/obelisk/v01-gameplay-desktop.webp'
+import obeliskV02MainHallModalDesktop from '../assets/projects/obelisk/v02-main-hall-modal-desktop.webp'
+import obeliskV02OnlineContinentDesktop from '../assets/projects/obelisk/v02-online-continent-desktop.webp'
+import obeliskV02OnlineTerritoryDesktop from '../assets/projects/obelisk/v02-online-territory-desktop.webp'
+import obeliskV02TileActionMenuDesktop from '../assets/projects/obelisk/v02-tile-action-menu-desktop.webp'
 import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
 import portfolioCover from '../assets/projects/portfolio/cover.webp'
 import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
@@ -353,7 +357,7 @@ export const PROJECTS = [
     liveUrl: null,
     repoUrl: 'https://github.com/Marco-Martins-97/marcoPortfolio',
     featured: true,
-    displayOrder: 2,
+    displayOrder: 4,
   },
   {
     id: 'homelab',
@@ -406,12 +410,12 @@ export const PROJECTS = [
       timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
-      en: 'Asynchronous browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic 100×100 continent & 25×25 territory engine.',
-      pt: 'MMORTS assíncrono no navegador inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico de continentes 100×100 e territórios 25×25.',
+      en: 'Asynchronous browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone Age vertical slice.',
+      pt: 'MMORTS assíncrono no navegador inspirado em Tribal Wars e TerraFirmaCraft—com motor de mundo determinístico e vertical slice da Idade da Pedra.',
     },
     description: {
-      en: 'Asynchronous, browser-based MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.1.0 ships the isomorphic @obelisk/shared deterministic world/territory engine (zero Math.random(), Mulberry32 PRNG, 2D Perlin/fBm noise, Voronoi stone provinces, and BFS moisture) paired with an interactive HTML5 Canvas sandbox with frustum culling and dual Gameplay/Dev inspection layers.',
-      pt: 'MMORTS assíncrono no navegador que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.1.0 entrega o motor isomórfico determinístico @obelisk/shared (zero Math.random(), PRNG Mulberry32, ruído Perlin/fBm 2D, províncias rochosas Voronoi e humidade por BFS) com um sandbox interativo em HTML5 Canvas com frustum culling e vistas Gameplay/Dev.',
+      en: 'Asynchronous, browser-based MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.2.0 ships the Stone Age playable vertical slice: Online (/) vs. Sandbox (/sandbox) routing, strict Fog of War, MAIN Age/Level controller, persistent technology tree, multi-unit team dispatch with HH:MM:SS phase timers, and localStorage save persistence—backed by the @obelisk/shared deterministic world engine.',
+      pt: 'MMORTS assíncrono no navegador que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.2.0 entrega o vertical slice jogável da Idade da Pedra: rotas Online (/) vs. Sandbox (/sandbox), Fog of War estrito, controlador de Era/Nível no MAIN, árvore tecnológica persistente, envio de equipas multi-unidade com temporizadores HH:MM:SS e persistência em localStorage sobre o motor determinístico @obelisk/shared.',
     },
     highlights: [
       {
@@ -423,20 +427,25 @@ export const PROJECTS = [
         pt: 'Lei de Escala 25×: gera 6.250.000 sub-tiles on-demand a partir do tileSeed com interpolação segura para Fog of War',
       },
       {
-        en: 'Procedural geology & hydrology: Voronoi stone provinces (7 rock types), BFS moisture from water tiles, and rarity-scaled ore density fields',
-        pt: 'Geologia e hidrologia procedurais: províncias rochosas Voronoi (7 rochas), humidade por BFS e campos de densidade de minérios por raridade',
+        en: 'Stone Age playable loop: Online (/) Fog of War (7×7 territory / 1 continent tile) vs. Sandbox (/sandbox), MAIN Age controller, and persistent Tech Tree',
+        pt: 'Ciclo jogável da Idade da Pedra: Online (/) com Fog of War (território 7×7 / 1 tile continental) vs. Sandbox (/sandbox), controlador de Era no MAIN e Árvore Tecnológica',
+      },
+      {
+        en: 'Multi-unit team dispatch (Gatherer, Hunter, Builder) with Smart Role Assignment and HH:MM:SS Traveling → Working → Returning timers',
+        pt: 'Envio de equipas multi-unidade (Recoletor, Caçador, Construtor) com atribuição inteligente e temporizadores HH:MM:SS Viagem → Trabalho → Regresso',
       },
       {
         en: 'HTML5 Canvas viewport with frustum culling, cached 16×16 sprites, and Gameplay/Dev data layer heatmaps',
         pt: 'Viewport HTML5 Canvas com frustum culling, sprites 16×16 em cache e mapas de calor de camadas Gameplay/Dev',
       },
       {
-        en: 'Verified by 24 automated Vitest determinism, invariant, and performance benchmark tests across 6 suites',
-        pt: 'Verificado por 24 testes automatizados Vitest de determinismo, invariantes e benchmarks de desempenho em 6 suites',
+        en: 'Verified by 44 automated Vitest tests across 7 suites (determinism, invariants, Stone Age math, and benchmarks)',
+        pt: 'Verificado por 44 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática da Idade da Pedra e benchmarks)',
       },
     ],
     techStack: [
       'React',
+      'React Router',
       'Vite',
       'Tailwind CSS',
       'HTML5 Canvas',
@@ -449,6 +458,66 @@ export const PROJECTS = [
     thumbnail: obeliskCover,
     screenshots: [],
     versions: [
+      {
+        version: 'v0.2.0',
+        title: {
+          en: 'Stone Age Playable Vertical Slice',
+          pt: 'Vertical Slice Jogável da Idade da Pedra',
+        },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Split Online (/) and Sandbox (/sandbox) routes via React Router with strict Online Fog of War (7×7 territory, 1 continent tile) and 1×–3600× speed controls',
+            pt: 'Separadas as rotas Online (/) e Sandbox (/sandbox) com React Router, Fog of War estrito no Online (7×7 território, 1 tile continental) e controlo de velocidade 1×–3600×',
+          },
+          {
+            en: 'Implemented MAIN Hall modal (unit training, level upgrades, Age advancement), right-click TileActionMenu, persistent Tech Tree, and multi-unit Team dispatch',
+            pt: 'Implementados o modal MAIN Hall (treino de unidades, evolução de nível, avanço de Era), menu TileActionMenu por clique direito, Árvore Tecnológica persistente e envio de equipas',
+          },
+        ],
+        screenshots: [
+          {
+            src: obeliskV02OnlineTerritoryDesktop,
+            device: 'desktop',
+            route: '/',
+            label: { en: 'Online Territory HUD', pt: 'HUD Território Online' },
+            caption: {
+              en: 'Online Territory view (7×7 explored Fog of War) with VillageHud, Active Timers, Units, Stockpile, Unlocked Technologies, and Village Log',
+              pt: 'Vista de Território Online (Fog of War 7×7 explorado) com VillageHud, Temporizadores, Unidades, Stockpile, Tecnologias e Registo da Aldeia',
+            },
+          },
+          {
+            src: obeliskV02OnlineContinentDesktop,
+            device: 'desktop',
+            route: '/?map=continent',
+            label: { en: 'Online Continent Fog', pt: 'Fog Continental Online' },
+            caption: {
+              en: 'Continent (100×100) map in Online mode starting with 1 explored village tile and Fit Explored / Fit All zoom controls',
+              pt: 'Mapa Continental (100×100) em modo Online a iniciar com 1 tile de aldeia explorado e controlos Fit Explored / Fit All',
+            },
+          },
+          {
+            src: obeliskV02MainHallModalDesktop,
+            device: 'desktop',
+            route: '/?modal=main-hall',
+            label: { en: 'Main Village Hall', pt: 'Salão Principal (MAIN)' },
+            caption: {
+              en: 'Main Village Hall modal for training Gatherers, Hunters, and Builders, upgrading storage/population levels, and advancing village Age',
+              pt: 'Modal do Salão Principal para treino de Recoletores, Caçadores e Construtores, melhoria de armazém/população e avanço de Era',
+            },
+          },
+          {
+            src: obeliskV02TileActionMenuDesktop,
+            device: 'desktop',
+            route: '/?action=tile-menu',
+            label: { en: 'Tile Action & Build Menu', pt: 'Menu de Ação & Construção' },
+            caption: {
+              en: 'Right-click tile context menu supporting quick Gather/Hunt dispatch, Smart Role Team composition, and tech-gated building construction',
+              pt: 'Menu contextual por clique direito com envio rápido de Recolha/Caça, composição de Equipa inteligente e construção condicionada por tecnologia',
+            },
+          },
+        ],
+      },
       {
         version: 'v0.1.0',
         title: {
@@ -533,7 +602,7 @@ export const PROJECTS = [
     liveUrl: 'https://obelisk.builtbymarco.dev/',
     repoUrl: 'https://github.com/Marco-Martins-97/obelisk',
     featured: false,
-    displayOrder: 4,
+    displayOrder: 2,
   },
   {
     id: 'expense-tracker-node',

@@ -145,9 +145,8 @@ export function ProjectDetails() {
             {project.title}
           </h1>
           <span
-            className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold ${
-              isLive ? 'bg-live/15 text-live' : 'bg-building/15 text-building'
-            }`}
+            className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold ${isLive ? 'bg-live/15 text-live' : 'bg-building/15 text-building'
+              }`}
           >
             {isLive
               ? t({ en: 'Live', pt: 'Online' })
@@ -295,9 +294,8 @@ export function ProjectDetails() {
                     </span>
                     <FiChevronDown
                       aria-hidden="true"
-                      className={`h-4 w-4 shrink-0 text-muted transition-transform duration-200 ${
-                        isExpanded ? 'rotate-180' : ''
-                      }`}
+                      className={`h-4 w-4 shrink-0 text-muted transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''
+                        }`}
                     />
                   </button>
 

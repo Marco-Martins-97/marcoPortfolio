@@ -2,7 +2,7 @@
 
 > **Status:** Stage 1 Complete — Ready for Vercel Deployment (API-Ready)  
 > **Production Domain:** `https://builtbymarco.dev`  
-> **Last Updated:** 2026-11-16  
+> **Last Updated:** 2026-11-22  
 
 ---
 
@@ -105,9 +105,9 @@
 3. **HomeLab** (`Planning`)
    - *Stack:* `Raspberry Pi`, `DietPi`, `Linux`, `Nginx`, `Node.js`, `Pi-hole`, `ESP32`
    - *Scope:* Low-cost self-hosted daily server on Raspberry Pi Zero 2 W (8 GB OS + 32 GB external storage) running Pi-hole, FileBrowser, Node/Nginx web server, and planned ESP32 environmental/RF sensors.
-4. **Obelisk** (`Planning`)
-   - *Stack:* `MongoDB`, `Express`, `React`, `Node.js`, `Socket.io`, `HTML5 Canvas`, `Tailwind CSS`
-   - *Scope:* Fantasy browser strategy game inspired by Tribal Wars & TerraFirmaCraft—focused on exploration, commerce, seasons, climate/elevation biomes, lost ruins technologies, and Obelisk magic.
+4. **Obelisk** (`Building` — `https://obelisk.builtbymarco.dev/`, [GitHub](https://github.com/Marco-Martins-97/obelisk))
+   - *Stack:* `React`, `React Router`, `Vite`, `Tailwind CSS`, `HTML5 Canvas`, `Vitest`, `Node.js`, `Express`, `MongoDB`, `Socket.io`
+   - *Scope:* Asynchronous browser MMORTS inspired by Tribal Wars & TerraFirmaCraft; `v0.2.0` (Stages 0–3) ships the deterministic `@obelisk/shared` `100×100` Continent / `25×25` Territory engine and Stone Age playable vertical slice (`Online` Fog of War vs. `Sandbox` routes, `MAIN` Age controller, persistent Tech Tree, multi-unit Team dispatch with `HH:MM:SS` timers, and 44 Vitest tests across 7 suites).
 
 #### Secondary Projects (`/projects` Compact Showcase — 6 Curated Works)
 - **Backend & REST APIs:**
