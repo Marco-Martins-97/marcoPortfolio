@@ -26,6 +26,11 @@ import obeliskV05BronzeStockpileDesktop from '../assets/projects/obelisk/v05-bro
 import obeliskV05BronzeTerritoryDesktop from '../assets/projects/obelisk/v05-bronze-territory-desktop.webp'
 import obeliskV05CropFieldNpkDesktop from '../assets/projects/obelisk/v05-crop-field-npk-desktop.webp'
 import obeliskV05MineRepairDestroyDesktop from '../assets/projects/obelisk/v05-mine-repair-destroy-desktop.webp'
+import obeliskV06CapitalTerritoryDesktop from '../assets/projects/obelisk/v06-capital-territory-desktop.webp'
+import obeliskV06ContinentRuinsDesktop from '../assets/projects/obelisk/v06-continent-ruins-desktop.webp'
+import obeliskV06RuinsExpeditionDesktop from '../assets/projects/obelisk/v06-ruins-expedition-desktop.webp'
+import obeliskV06SteelCitadelDesktop from '../assets/projects/obelisk/v06-steel-citadel-desktop.webp'
+import obeliskV06WatermillAutocraftDesktop from '../assets/projects/obelisk/v06-watermill-autocraft-desktop.webp'
 import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
 import portfolioCover from '../assets/projects/portfolio/cover.webp'
 import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
@@ -426,12 +431,12 @@ export const PROJECTS = [
       timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
-      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone, Copper & Bronze Ages.',
-      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e Idades da Pedra, Cobre e Bronze.',
+      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine across 4 playable Ages.',
+      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e 4 Eras jogáveis.',
     },
     description: {
-      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.5.0 completes the Bronze Age vertical slice alongside Stone & Copper Ages: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower 3×3 aura, Port, Barracks, 2-tab Market & multi-colony Sandbox, dynamic City/Wall canvas overlays, timed unit recruitment, HUD threshold warnings, and a 10% task cancel window—backed by 70 automated Vitest tests.',
-      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.5.0 conclui o vertical slice da Idade do Bronze em conjunto com as Idades da Pedra e do Cobre: Workshop, Smokehouse, Bronze Forge, Bloomery, aura 3×3 da Watchtower, Port, Barracks, Mercado em 2 abas, multi-colónias no Sandbox, overlays de Cidade/Muralha, recrutamento cronometrado e janela de cancelamento de 10%—com 70 testes Vitest.',
+      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.6.0 adds the Iron Age vertical slice on top of Stone, Copper & Bronze Ages: evolving multi-tier buildings, 50 deterministic Continent Ruins with Blueprint recovery, Windmill/Watermill auto-crafting, Coal & Steel smelting, Knight/Heavy Wagon/Merchant Ship units, Colonization, Abandoned Village Conquest, and the 1-Capital rule—backed by 75 automated Vitest tests.',
+      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.6.0 adiciona o vertical slice da Idade do Ferro sobre Pedra, Cobre e Bronze: edifícios evolutivos multi-nível, 50 Ruínas determinísticas no Continente com Blueprints, Moinhos automáticos, fundição de Carvão/Aço, Cavaleiros/Carroças/Navios, Colonização, Conquista de Aldeias Abandonadas e regra de 1 Capital—com 75 testes Vitest.',
     },
     highlights: [
       {
@@ -443,20 +448,20 @@ export const PROJECTS = [
         pt: 'Lei de Escala 25×: gera 6.250.000 sub-tiles on-demand a partir do tileSeed com interpolação segura para Fog of War',
       },
       {
-        en: 'Bronze Age & multi-colony systems: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (3×3 aura), Port, Barracks, 2-tab Market, and + Spawn Colony',
-        pt: 'Sistemas da Idade do Bronze: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (aura 3×3), Port, Barracks, Mercado em 2 abas e + Spawn Colony',
+        en: 'Iron Age & expansion: 50 Continent Ruins with Blueprints, Windmill/Watermill auto-crafting, Colonization, Bandit Conquest, and 1-Capital rule',
+        pt: 'Idade do Ferro e expansão: 50 Ruínas com Blueprints, Moinhos de Vento/Água automáticos, Colonização, Conquista de Bandidos e regra de 1 Capital',
       },
       {
-        en: 'Copper Age & survival: Smithy 6-tool split, Prospector deposits, N/P/K farming, FEFO feeding & spoilage, 5-stage starvation, and building degradation/repair',
-        pt: 'Idade do Cobre e sobrevivência: 6 ferramentas no Smithy, depósitos contínuos, agricultura N/P/K, consumo FEFO, 5 níveis de fome e degradação/reparação',
+        en: 'Stone, Copper & Bronze systems: Smithy 6-tool split, N/P/K farming, Watchtower 3×3 aura, Port, Barracks, 2-tab Market, and FEFO survival',
+        pt: 'Sistemas Pedra/Cobre/Bronze: 6 ferramentas no Smithy, agricultura N/P/K, Watchtower 3×3, Port, Barracks, Mercado e sobrevivência FEFO',
       },
       {
-        en: 'HTML5 Canvas with dynamic City/Watchtower/Wall overlays, timed unit recruitment, HUD threshold warnings, 10% task cancel window, and Gameplay/Dev heatmaps',
-        pt: 'HTML5 Canvas com overlays de Cidade/Torre/Muralha, recrutamento cronometrado, alertas no HUD, janela de cancelamento de 10% e mapas Gameplay/Dev',
+        en: 'HTML5 Canvas with evolving multi-tier City/Wall overlays, Ruin markers, timed recruitment, 10% task cancel window, and Gameplay/Dev heatmaps',
+        pt: 'HTML5 Canvas com overlays evolutivos de Cidade/Muralha, marcadores de Ruínas, recrutamento cronometrado, cancelamento de 10% e mapas Gameplay/Dev',
       },
       {
-        en: 'Verified by 70 automated Vitest tests across 7 suites (determinism, invariants, Stone/Copper/Bronze Age math, and benchmarks)',
-        pt: 'Verificado por 70 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática das Idades da Pedra/Cobre/Bronze e benchmarks)',
+        en: 'Verified by 75 automated Vitest tests across 7 suites (determinism, invariants, Stone/Copper/Bronze/Iron Age math, and benchmarks)',
+        pt: 'Verificado por 75 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática das 4 Eras e benchmarks)',
       },
     ],
     techStack: [
@@ -474,6 +479,76 @@ export const PROJECTS = [
     thumbnail: obeliskCover,
     screenshots: [],
     versions: [
+      {
+        version: 'v0.6.0',
+        title: {
+          en: 'Iron Age, Ruins, Mills & Colonization',
+          pt: 'Idade do Ferro, Ruínas, Moinhos & Colonização',
+        },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Added Iron Age vertical slice: evolving multi-tier buildings, 50 deterministic Continent Ruins with Blueprint recovery, Windmill/Watermill auto-crafting, Coal & Steel smelting, and Knight/Heavy Wagon/Merchant Ship units',
+            pt: 'Adicionado o vertical slice da Idade do Ferro: edifícios evolutivos multi-nível, 50 Ruínas determinísticas com Blueprints, Moinhos de Vento/Água automáticos, fundição de Carvão/Aço e Cavaleiro/Carroça Pesada/Navio Mercante',
+          },
+          {
+            en: 'Implemented Colonization (Copper Age starter settlements), Bandit-held Abandoned Village Conquest, and the 1-Capital Tier 5 (7×7) rule',
+            pt: 'Implementadas Colonização (aldeias iniciais na Idade do Cobre), Conquista de Aldeias Abandonadas com Bandidos e a regra de 1 Capital Tier 5 (7×7)',
+          },
+        ],
+        screenshots: [
+          {
+            src: obeliskV06CapitalTerritoryDesktop,
+            device: 'desktop',
+            route: '/sandbox',
+            label: { en: '7×7 Capital & Brick Wall', pt: 'Capital 7×7 & Muralha' },
+            caption: {
+              en: 'Tier 5 (7×7) Capital territory with orange Brick Wall border, Windmill (WM), Watermill (WTM), Knight, Heavy Wagon, and Merchant Ship units',
+              pt: 'Território da Capital Tier 5 (7×7) com Muralha Laranja, Moinho de Vento (WM), Moinho de Água (WTM), Cavaleiro, Carroça e Navio',
+            },
+          },
+          {
+            src: obeliskV06ContinentRuinsDesktop,
+            device: 'desktop',
+            route: '/sandbox?map=continent',
+            label: { en: 'Continent Ruins & Biomes', pt: 'Ruínas Continentais' },
+            caption: {
+              en: '100×100 Continent Gameplay view displaying purple Ancient Ruin markers across mountain, desert, forest, and ocean biomes',
+              pt: 'Vista Gameplay do Continente 100×100 com marcadores roxos de Ruínas Antigas entre montanhas, desertos, florestas e oceanos',
+            },
+          },
+          {
+            src: obeliskV06RuinsExpeditionDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=expedition',
+            label: { en: 'Ruins Expedition & Colonize', pt: 'Expedição a Ruínas' },
+            caption: {
+              en: 'Continent Expedition modal supporting Ancient Ruins treasure/Blueprint raids, Colonize Settlement, and Heavy Wagon (400 bulk haul)',
+              pt: 'Modal de Expedição Continental para saques de Ruínas/Blueprints, Colonização e Carroça Pesada (400 de carga)',
+            },
+          },
+          {
+            src: obeliskV06WatermillAutocraftDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=watermill',
+            label: { en: 'Watermill Auto-Crafting', pt: 'Moinho Automático' },
+            caption: {
+              en: 'Tier 4 Watermill configuring up to 3 automated crafting slots at 100% steady river flow speed',
+              pt: 'Moinho de Água Tier 4 a configurar até 3 espaços de produção automática a 100% de velocidade constante',
+            },
+          },
+          {
+            src: obeliskV06SteelCitadelDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=citadel',
+            label: { en: 'Steel Capital Citadel', pt: 'Cidadela da Capital' },
+            caption: {
+              en: 'Tier 5 Steel Capital Citadel modal with +73,333 storage, +1,333 pop, Repair All Buildings, and Tier 3 City Wall upgrades',
+              pt: 'Modal da Cidadela da Capital Tier 5 com +73.333 armazém, +1.333 pop, Reparar Todos os Edifícios e Muralha Tier 3',
+            },
+          },
+        ],
+      },
       {
         version: 'v0.5.0',
         title: {

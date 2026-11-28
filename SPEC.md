@@ -107,7 +107,7 @@
    - *Scope:* Low-cost self-hosted daily server on Raspberry Pi Zero 2 W (8 GB OS + 32 GB external storage) running Pi-hole, FileBrowser, Node/Nginx web server, and planned ESP32 environmental/RF sensors.
 4. **Obelisk** (`Building` — `https://obelisk.builtbymarco.dev/`, [GitHub](https://github.com/Marco-Martins-97/obelisk))
    - *Stack:* `React`, `React Router`, `Vite`, `Tailwind CSS`, `HTML5 Canvas`, `Vitest`, `Node.js`, `Express`, `MongoDB`, `Socket.io`
-   - *Scope:* Asynchronous desktop-browser MMORTS inspired by Tribal Wars & TerraFirmaCraft; `v0.5.0` (Stages 0–5) ships the deterministic `@obelisk/shared` `100×100` Continent / `25×25` Territory engine and Stone, Copper & Bronze Age vertical slices (Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower `3×3` aura, Port, Barracks, 2-tab Market, multi-colony Sandbox, City/Wall canvas overlays, timed recruitment, 10% task cancel window, and 70 Vitest tests across 7 suites).
+   - *Scope:* Asynchronous desktop-browser MMORTS inspired by Tribal Wars & TerraFirmaCraft; `v0.6.0` (Stages 0–6) ships the deterministic `@obelisk/shared` `100×100` Continent / `25×25` Territory engine and Stone, Copper, Bronze & Iron Age vertical slices (evolving multi-tier buildings, `50` Ruins & Blueprints, Windmill/Watermill auto-crafting, Coal/Steel smelting, Colonization, Abandoned Conquest, 1-Capital rule, and 75 Vitest tests across 7 suites).
 
 #### Secondary Projects (`/projects` Compact Showcase — 6 Curated Works)
 - **Backend & REST APIs:**
