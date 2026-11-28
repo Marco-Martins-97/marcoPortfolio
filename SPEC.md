@@ -2,7 +2,7 @@
 
 > **Status:** Stage 1 Complete — Ready for Vercel Deployment (API-Ready)  
 > **Production Domain:** `https://builtbymarco.dev`  
-> **Last Updated:** 2026-11-24  
+> **Last Updated:** 2026-11-28  
 
 ---
 
@@ -107,7 +107,7 @@
    - *Scope:* Low-cost self-hosted daily server on Raspberry Pi Zero 2 W (8 GB OS + 32 GB external storage) running Pi-hole, FileBrowser, Node/Nginx web server, and planned ESP32 environmental/RF sensors.
 4. **Obelisk** (`Building` — `https://obelisk.builtbymarco.dev/`, [GitHub](https://github.com/Marco-Martins-97/obelisk))
    - *Stack:* `React`, `React Router`, `Vite`, `Tailwind CSS`, `HTML5 Canvas`, `Vitest`, `Node.js`, `Express`, `MongoDB`, `Socket.io`
-   - *Scope:* Asynchronous desktop-browser MMORTS inspired by Tribal Wars & TerraFirmaCraft; `v0.3.0` (Stages 0–3) ships the deterministic `@obelisk/shared` `100×100` Continent / `25×25` Territory engine and Stone Age survival vertical slice (`Offline` 6× vs. `Sandbox`, pooled Warehouse storage, Firepit Salt boiling & Drying Rack preservation, FEFO auto-feeding & fractional spoilage, 5-stage starvation debuffs, built-in How to Play guide, and 52 Vitest tests across 7 suites).
+   - *Scope:* Asynchronous desktop-browser MMORTS inspired by Tribal Wars & TerraFirmaCraft; `v0.4.0` (Stages 0–4) ships the deterministic `@obelisk/shared` `100×100` Continent / `25×25` Territory engine and Stone & Copper Age vertical slices (Smithy 6-tool split, Prospector surveying & continuous deposits, `N/P/K` farming & Animal Pens, building degradation/City Wall, Wolf/Bear encounters, FEFO survival, real-time `HH:MM:SS` timers, and 64 Vitest tests across 7 suites).
 
 #### Secondary Projects (`/projects` Compact Showcase — 6 Curated Works)
 - **Backend & REST APIs:**

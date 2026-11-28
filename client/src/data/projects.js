@@ -15,6 +15,12 @@ import obeliskV03ActiveTimerDebuffDesktop from '../assets/projects/obelisk/v03-a
 import obeliskV03BuildMenuDesktop from '../assets/projects/obelisk/v03-build-menu-desktop.webp'
 import obeliskV03HowToPlayDesktop from '../assets/projects/obelisk/v03-how-to-play-desktop.webp'
 import obeliskV03OfflineHudDesktop from '../assets/projects/obelisk/v03-offline-hud-desktop.webp'
+import obeliskV04CopperMainHallDesktop from '../assets/projects/obelisk/v04-copper-main-hall-desktop.webp'
+import obeliskV04OfflineHudDesktop from '../assets/projects/obelisk/v04-offline-hud-desktop.webp'
+import obeliskV04OrchardDesktop from '../assets/projects/obelisk/v04-orchard-desktop.webp'
+import obeliskV04SmithyToolsDesktop from '../assets/projects/obelisk/v04-smithy-tools-desktop.webp'
+import obeliskV04StockpileModalDesktop from '../assets/projects/obelisk/v04-stockpile-modal-desktop.webp'
+import obeliskV04TileMenuProspectDesktop from '../assets/projects/obelisk/v04-tile-menu-prospect-desktop.webp'
 import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
 import portfolioCover from '../assets/projects/portfolio/cover.webp'
 import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
@@ -415,12 +421,12 @@ export const PROJECTS = [
       timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
-      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone Age survival.',
-      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e sobrevivência na Idade da Pedra.',
+      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone & Copper Age slices.',
+      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e fases Idade da Pedra e do Cobre.',
     },
     description: {
-      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.3.0 completes the Stone Age survival vertical slice: Offline (6×) vs. Sandbox modes, built-in How to Play guide, pooled Warehouse storage, Firepit Salt boiling & Drying Rack preservation, FEFO auto-feeding with fractional spoilage, 5-stage starvation debuffs, and Celsius climate—backed by 52 automated Vitest tests.',
-      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.3.0 conclui o vertical slice de sobrevivência da Idade da Pedra: modos Offline (6×) vs. Sandbox, guia How to Play integrado, armazém partilhado (Warehouse), produção de sal (Firepit) e secagem (Drying Rack), consumo FEFO com deterioração fracionária, 5 níveis de penalização por fome e clima em Celsius—com 52 testes Vitest.',
+      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.4.0 completes the Copper Age vertical slice alongside Stone Age survival: Smithy 6-tool split, Prospector surveying & continuous deposits (Mine, Timber Camp, Quarry, Clay Pit, moisture-scaled Well), N/P/K farming & Animal Pens, building degradation/repair & City Wall defense, forest Wolf/Bear encounters, and real-time HH:MM:SS timers—backed by 64 automated Vitest tests.',
+      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.4.0 conclui o vertical slice da Idade do Cobre em conjunto com a sobrevivência da Idade da Pedra: divisão de 6 ferramentas no Smithy, prospeção e depósitos contínuos (Mina, Madeireiro, Pedreira, Poço), agricultura N/P/K e currais, degradação/reparação e Muralha, encontros com lobos/ursos e temporizadores HH:MM:SS—com 64 testes Vitest.',
     },
     highlights: [
       {
@@ -432,20 +438,20 @@ export const PROJECTS = [
         pt: 'Lei de Escala 25×: gera 6.250.000 sub-tiles on-demand a partir do tileSeed com interpolação segura para Fog of War',
       },
       {
-        en: 'Stone Age survival: FEFO auto-feeding, fractional spoilage, Firepit Salt boiling, Drying Rack curing, and 5-stage Hunger → Death/Abandoned debuffs',
-        pt: 'Sobrevivência na Idade da Pedra: consumo FEFO, deterioração fracionária, produção de sal no Firepit, secagem no Drying Rack e debuffs Fome → Morte/Abandono',
+        en: 'Copper Age industry: Smithy 6-tool split, Prospector surveying, continuous deposits, moisture-scaled Well, and N/P/K Crop Fields, Orchards & Animal Pens',
+        pt: 'Indústria da Idade do Cobre: 6 ferramentas no Smithy, prospeção, depósitos contínuos, Poço escalado por humidade e agricultura N/P/K, Pomares e Currais',
       },
       {
-        en: 'Offline (6×) & Sandbox routes with strict Fog of War, pooled Warehouse storage, real-time wall-clock timers, and built-in How to Play guide',
-        pt: 'Rotas Offline (6×) e Sandbox com Fog of War estrito, armazém partilhado, temporizadores em hora real e guia How to Play integrado',
+        en: 'Stone Age survival & upkeep: FEFO feeding, fractional spoilage, Salt/Drying Rack curing, 5-stage starvation debuffs, building decay/repair, and City Wall defense',
+        pt: 'Sobrevivência e manutenção: consumo FEFO, deterioração fracionária, sal e secagem, 5 níveis de fome, degradação/reparação e defesa de Muralha',
       },
       {
-        en: 'HTML5 Canvas viewport with frustum culling, cached 16×16 sprites, and Gameplay/Dev data layer heatmaps',
-        pt: 'Viewport HTML5 Canvas com frustum culling, sprites 16×16 em cache e mapas de calor de camadas Gameplay/Dev',
+        en: 'HTML5 Canvas viewport with frustum culling, right-click Quick Actions, Wolf/Bear forest encounters, Continent Expeditions, and Gameplay/Dev heatmaps',
+        pt: 'Viewport HTML5 Canvas com frustum culling, ações rápidas por clique direito, encontros com lobos/ursos, expedições continentais e mapas Gameplay/Dev',
       },
       {
-        en: 'Verified by 52 automated Vitest tests across 7 suites (determinism, invariants, Stone Age survival math, and benchmarks)',
-        pt: 'Verificado por 52 testes automatizados Vitest em 7 suites (determinismo, invariantes, sobrevivência da Idade da Pedra e benchmarks)',
+        en: 'Verified by 64 automated Vitest tests across 7 suites (determinism, invariants, Stone & Copper Age math, and benchmarks)',
+        pt: 'Verificado por 64 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática da Idade da Pedra/Cobre e benchmarks)',
       },
     ],
     techStack: [
@@ -463,6 +469,86 @@ export const PROJECTS = [
     thumbnail: obeliskCover,
     screenshots: [],
     versions: [
+      {
+        version: 'v0.4.0',
+        title: {
+          en: 'Copper Age, N/P/K Farming & Degradation',
+          pt: 'Idade do Cobre, Agricultura N/P/K & Degradação',
+        },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Added Copper Age vertical slice: Smithy 6-tool split, Prospector surveying, continuous deposits (Mine, Timber Camp, Quarry, Clay Pit, Well), N/P/K Crop Fields, Orchards, Animal Pens, and Vessels/Baskets',
+            pt: 'Adicionado o vertical slice da Idade do Cobre: 6 ferramentas no Smithy, prospeção, depósitos contínuos (Mina, Madeireiro, Pedreira, Poço), agricultura N/P/K, Pomares, Currais e Vasos/Cestos',
+          },
+          {
+            en: 'Added building degradation & Repair/City Wall defense, forest Wolf/Bear encounters, Continent Expeditions, real-time HH:MM:SS timers, idle unit dismissal (-1), and header Stockpile/Technologies/Log modals',
+            pt: 'Adicionada degradação e reparação de edifícios/Muralha, encontros com lobos/ursos, expedições continentais, temporizadores HH:MM:SS, dispensa de unidades (-1) e modais de Stockpile/Tecnologias/Registo',
+          },
+        ],
+        screenshots: [
+          {
+            src: obeliskV04OfflineHudDesktop,
+            device: 'desktop',
+            route: '/',
+            label: { en: 'v0.4 HUD & Unit Dismissal', pt: 'HUD v0.4 & Dispensa' },
+            caption: {
+              en: 'Updated HUD with Production (/day), Prospector/Scout/Caravan slots, -1 idle unit dismissal, header modals, and real-time timers',
+              pt: 'HUD atualizado com Produção (/dia), Prospetor/Batedor/Caravana, dispensa -1, modais no cabeçalho e temporizadores em tempo real',
+            },
+          },
+          {
+            src: obeliskV04StockpileModalDesktop,
+            device: 'desktop',
+            route: '/?modal=stockpile',
+            label: { en: 'Categorized Stockpile', pt: 'Armazém Categorizado' },
+            caption: {
+              en: 'Header Stockpile modal with All, Materials, Food, Ores, and Ingots category filters',
+              pt: 'Modal de Stockpile no cabeçalho com filtros por Tudo, Materiais, Comida, Minérios e Lingotes',
+            },
+          },
+          {
+            src: obeliskV04TileMenuProspectDesktop,
+            device: 'desktop',
+            route: '/?action=tile-menu',
+            label: { en: 'Prospect & Smithy Menu', pt: 'Prospeção & Smithy' },
+            caption: {
+              en: 'Right-click tile menu featuring Prospect Tile surveying and Smithy construction with real-time HH:MM:SS build durations',
+              pt: 'Menu contextual por clique direito com Prospeção de Tile e construção de Smithy com duração HH:MM:SS em tempo real',
+            },
+          },
+          {
+            src: obeliskV04SmithyToolsDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=smithy',
+            label: { en: 'Smithy 6-Tool Split', pt: 'Smithy: 6 Ferramentas' },
+            caption: {
+              en: 'Smithy research tree splitting Stone/Bone starter tools and Copper upgrades across Axe, Pickaxe, Hoe, Spear, Shovel, and Hammer',
+              pt: 'Árvore de pesquisa do Smithy dividindo ferramentas de Pedra/Osso e Cobre entre Machado, Picareta, Enxada, Lança, Pá e Martelo',
+            },
+          },
+          {
+            src: obeliskV04OrchardDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=orchard',
+            label: { en: 'Orchard & Farming', pt: 'Pomar & Agricultura' },
+            caption: {
+              en: 'Farmstead-adjacent Orchard managing 9 Apple Tree slots with sapling planting and seasonal Summer/Autumn harvests',
+              pt: 'Pomar adjacente à Quinta com 9 espaços para macieiras, plantação de mudas e colheitas sazonais de Verão/Outono',
+            },
+          },
+          {
+            src: obeliskV04CopperMainHallDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=main-hall',
+            label: { en: 'Copper Age Main & Wall', pt: 'Salão Cobre & Muralha' },
+            caption: {
+              en: 'Tier 2 (Copper Age) Main Village Hall showing City Wall defense/degradation reduction and Bronze Age advancement gate',
+              pt: 'Salão Principal Tier 2 (Idade do Cobre) mostrando defesa/redução de degradação da Muralha e avanço para a Idade do Bronze',
+            },
+          },
+        ],
+      },
       {
         version: 'v0.3.0',
         title: {
