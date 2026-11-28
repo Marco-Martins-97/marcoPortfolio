@@ -21,6 +21,11 @@ import obeliskV04OrchardDesktop from '../assets/projects/obelisk/v04-orchard-des
 import obeliskV04SmithyToolsDesktop from '../assets/projects/obelisk/v04-smithy-tools-desktop.webp'
 import obeliskV04StockpileModalDesktop from '../assets/projects/obelisk/v04-stockpile-modal-desktop.webp'
 import obeliskV04TileMenuProspectDesktop from '../assets/projects/obelisk/v04-tile-menu-prospect-desktop.webp'
+import obeliskV05BronzeMainHallDesktop from '../assets/projects/obelisk/v05-bronze-main-hall-desktop.webp'
+import obeliskV05BronzeStockpileDesktop from '../assets/projects/obelisk/v05-bronze-stockpile-desktop.webp'
+import obeliskV05BronzeTerritoryDesktop from '../assets/projects/obelisk/v05-bronze-territory-desktop.webp'
+import obeliskV05CropFieldNpkDesktop from '../assets/projects/obelisk/v05-crop-field-npk-desktop.webp'
+import obeliskV05MineRepairDestroyDesktop from '../assets/projects/obelisk/v05-mine-repair-destroy-desktop.webp'
 import portfolioAboutDesktop from '../assets/projects/portfolio/about-desktop.webp'
 import portfolioCover from '../assets/projects/portfolio/cover.webp'
 import portfolioHomeMobile from '../assets/projects/portfolio/home-mobile.webp'
@@ -421,12 +426,12 @@ export const PROJECTS = [
       timeline: { en: 'Nov 2026 - Present', pt: 'Nov 2026 - Presente' },
     },
     summary: {
-      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone & Copper Age slices.',
-      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e fases Idade da Pedra e do Cobre.',
+      en: 'Asynchronous desktop browser MMORTS inspired by Tribal Wars & TerraFirmaCraft—featuring a deterministic world engine and Stone, Copper & Bronze Ages.',
+      pt: 'MMORTS assíncrono para navegador desktop inspirado em Tribal Wars e TerraFirmaCraft—com motor determinístico e Idades da Pedra, Cobre e Bronze.',
     },
     description: {
-      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.4.0 completes the Copper Age vertical slice alongside Stone Age survival: Smithy 6-tool split, Prospector surveying & continuous deposits (Mine, Timber Camp, Quarry, Clay Pit, moisture-scaled Well), N/P/K farming & Animal Pens, building degradation/repair & City Wall defense, forest Wolf/Bear encounters, and real-time HH:MM:SS timers—backed by 64 automated Vitest tests.',
-      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.4.0 conclui o vertical slice da Idade do Cobre em conjunto com a sobrevivência da Idade da Pedra: divisão de 6 ferramentas no Smithy, prospeção e depósitos contínuos (Mina, Madeireiro, Pedreira, Poço), agricultura N/P/K e currais, degradação/reparação e Muralha, encontros com lobos/ursos e temporizadores HH:MM:SS—com 64 testes Vitest.',
+      en: 'Asynchronous, desktop-browser MMORTS combining Tribal Wars-style world exploration and marketplace trading with TerraFirmaCraft-inspired geological scarcity, prospecting, and seasonal survival. v0.5.0 completes the Bronze Age vertical slice alongside Stone & Copper Ages: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower 3×3 aura, Port, Barracks, 2-tab Market & multi-colony Sandbox, dynamic City/Wall canvas overlays, timed unit recruitment, HUD threshold warnings, and a 10% task cancel window—backed by 70 automated Vitest tests.',
+      pt: 'MMORTS assíncrono para navegador desktop que combina exploração e comércio ao estilo Tribal Wars com escassez geológica, prospeção e sobrevivência sazonal inspiradas no TerraFirmaCraft. A v0.5.0 conclui o vertical slice da Idade do Bronze em conjunto com as Idades da Pedra e do Cobre: Workshop, Smokehouse, Bronze Forge, Bloomery, aura 3×3 da Watchtower, Port, Barracks, Mercado em 2 abas, multi-colónias no Sandbox, overlays de Cidade/Muralha, recrutamento cronometrado e janela de cancelamento de 10%—com 70 testes Vitest.',
     },
     highlights: [
       {
@@ -438,20 +443,20 @@ export const PROJECTS = [
         pt: 'Lei de Escala 25×: gera 6.250.000 sub-tiles on-demand a partir do tileSeed com interpolação segura para Fog of War',
       },
       {
-        en: 'Copper Age industry: Smithy 6-tool split, Prospector surveying, continuous deposits, moisture-scaled Well, and N/P/K Crop Fields, Orchards & Animal Pens',
-        pt: 'Indústria da Idade do Cobre: 6 ferramentas no Smithy, prospeção, depósitos contínuos, Poço escalado por humidade e agricultura N/P/K, Pomares e Currais',
+        en: 'Bronze Age & multi-colony systems: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (3×3 aura), Port, Barracks, 2-tab Market, and + Spawn Colony',
+        pt: 'Sistemas da Idade do Bronze: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (aura 3×3), Port, Barracks, Mercado em 2 abas e + Spawn Colony',
       },
       {
-        en: 'Stone Age survival & upkeep: FEFO feeding, fractional spoilage, Salt/Drying Rack curing, 5-stage starvation debuffs, building decay/repair, and City Wall defense',
-        pt: 'Sobrevivência e manutenção: consumo FEFO, deterioração fracionária, sal e secagem, 5 níveis de fome, degradação/reparação e defesa de Muralha',
+        en: 'Copper Age & survival: Smithy 6-tool split, Prospector deposits, N/P/K farming, FEFO feeding & spoilage, 5-stage starvation, and building degradation/repair',
+        pt: 'Idade do Cobre e sobrevivência: 6 ferramentas no Smithy, depósitos contínuos, agricultura N/P/K, consumo FEFO, 5 níveis de fome e degradação/reparação',
       },
       {
-        en: 'HTML5 Canvas viewport with frustum culling, right-click Quick Actions, Wolf/Bear forest encounters, Continent Expeditions, and Gameplay/Dev heatmaps',
-        pt: 'Viewport HTML5 Canvas com frustum culling, ações rápidas por clique direito, encontros com lobos/ursos, expedições continentais e mapas Gameplay/Dev',
+        en: 'HTML5 Canvas with dynamic City/Watchtower/Wall overlays, timed unit recruitment, HUD threshold warnings, 10% task cancel window, and Gameplay/Dev heatmaps',
+        pt: 'HTML5 Canvas com overlays de Cidade/Torre/Muralha, recrutamento cronometrado, alertas no HUD, janela de cancelamento de 10% e mapas Gameplay/Dev',
       },
       {
-        en: 'Verified by 64 automated Vitest tests across 7 suites (determinism, invariants, Stone & Copper Age math, and benchmarks)',
-        pt: 'Verificado por 64 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática da Idade da Pedra/Cobre e benchmarks)',
+        en: 'Verified by 70 automated Vitest tests across 7 suites (determinism, invariants, Stone/Copper/Bronze Age math, and benchmarks)',
+        pt: 'Verificado por 70 testes automatizados Vitest em 7 suites (determinismo, invariantes, matemática das Idades da Pedra/Cobre/Bronze e benchmarks)',
       },
     ],
     techStack: [
@@ -469,6 +474,76 @@ export const PROJECTS = [
     thumbnail: obeliskCover,
     screenshots: [],
     versions: [
+      {
+        version: 'v0.5.0',
+        title: {
+          en: 'Bronze Age, City/Wall Overlays & Timed Recruitment',
+          pt: 'Idade do Bronze, Overlays de Cidade & Recrutamento',
+        },
+        date: 'Nov 2026',
+        changes: [
+          {
+            en: 'Added Bronze Age vertical slice: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (3×3 aura), Port, Barracks military units, 2-tab Market, and Sandbox + Spawn Colony switcher',
+            pt: 'Adicionado o vertical slice da Idade do Bronze: Workshop, Smokehouse, Bronze Forge, Bloomery, Watchtower (aura 3×3), Port, unidades militares no Barracks, Mercado em 2 abas e multi-colónias no Sandbox',
+          },
+          {
+            en: 'Added dynamic City/Watchtower/Wall canvas overlays, timed unit recruitment, HUD storage/food/water/pop threshold warnings, and a 10% elapsed task cancel window',
+            pt: 'Adicionados overlays dinâmicos de Cidade/Watchtower/Muralha no Canvas, recrutamento cronometrado de unidades, alertas de limiar no HUD e janela de cancelamento de 10% nas tarefas',
+          },
+        ],
+        screenshots: [
+          {
+            src: obeliskV05BronzeTerritoryDesktop,
+            device: 'desktop',
+            route: '/sandbox',
+            label: { en: 'Bronze Territory & Overlays', pt: 'Território Bronze & Overlays' },
+            caption: {
+              en: 'Bronze Age Territory (Colony 2) with City/Watchtower overlays, Port, Barracks, Bloomery, and military unit roster',
+              pt: 'Território da Idade do Bronze (Colónia 2) com overlays de Cidade/Watchtower, Porto, Quartel, Forja e unidades militares',
+            },
+          },
+          {
+            src: obeliskV05BronzeStockpileDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=stockpile',
+            label: { en: 'Bronze & Iron Stockpile', pt: 'Stockpile Bronze & Ferro' },
+            caption: {
+              en: 'Categorized Stockpile modal displaying Copper/Bronze Ingots, Tin Nuggets, Iron Ore, Stone Blocks, Planks, and Uncut Gems',
+              pt: 'Modal de Stockpile categorizado com lingotes de Cobre/Bronze, pepitas de Estanho, minério de Ferro, blocos de pedra e gemas',
+            },
+          },
+          {
+            src: obeliskV05BronzeMainHallDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=main-hall',
+            label: { en: 'Bronze Age Main Hall', pt: 'Salão Idade do Bronze' },
+            caption: {
+              en: 'Tier 3 (Bronze Age) Main Village Hall with timed unit recruitment, City Wall (Tier 2 Lv 2), and Iron Age advancement gate',
+              pt: 'Salão Principal Tier 3 (Idade do Bronze) com recrutamento cronometrado, Muralha (Tier 2 Nv 2) e avanço para a Idade do Ferro',
+            },
+          },
+          {
+            src: obeliskV05MineRepairDestroyDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=mine',
+            label: { en: 'Mine Repair & Destroy', pt: 'Reparação & Demolição' },
+            caption: {
+              en: 'Mine Shaft modal showing building condition (98%), Repair action, continuous Flux/Gems output, and guarded Destroy Building',
+              pt: 'Modal da Mina mostrando condição (98%), reparação, produção contínua de Flux/Gemas e botão protegido de demolição',
+            },
+          },
+          {
+            src: obeliskV05CropFieldNpkDesktop,
+            device: 'desktop',
+            route: '/sandbox?modal=crop-field',
+            label: { en: 'N/P/K Crop Field Ready', pt: 'Campo N/P/K Pronto' },
+            caption: {
+              en: '8×8 Crop Field showing Nitrogen/Phosphorus/Potassium levels, Wheat/Grain growth (60/60d), and Harvest Crop action',
+              pt: 'Campo de Cultivo 8×8 com níveis de Azoto/Fósforo/Potássio, crescimento de Trigo (60/60d) e ação de colheita',
+            },
+          },
+        ],
+      },
       {
         version: 'v0.4.0',
         title: {
